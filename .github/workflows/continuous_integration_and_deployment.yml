@@ -11,23 +11,23 @@ on:
       - "release/**"
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  # test:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      - name: Install node packages
-        run: npm install
+  #     - name: Install node packages
+  #       run: npm install
 
-      - name: Run lint
-        run: npm run lint
+  #     - name: Run lint
+  #       run: npm run lint
 
-      - name: Run unit test
-        run: npm run test
+  #     - name: Run unit test
+  #       run: npm run test
 
-      - name: Run end to end test
-        run: npm run e2e
+  #     - name: Run end to end test
+  #       run: npm run e2e
   deploy:
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -49,4 +49,4 @@ jobs:
       - name: Deploy Staging
         run: |
           git remote add staging https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING_APP.git
-          git push -f staging origin/chore/ci-cd:refs/heads/master
+          git push -f staging origin/chore/ci-cd:refs/heads/chore/ci-cd
