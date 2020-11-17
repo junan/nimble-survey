@@ -13,7 +13,7 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'ChromeHeadless',
+    browserName: 'chrome',
     chromeOptions: {
       args: [ "--headless" ]
     },
