@@ -13,7 +13,10 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'ChromeHeadless',
+    chromeOptions: {
+      args: [ "--headless" ]
+    },
   },
   directConnect: true,
   SELENIUM_PROMISE_MANAGER: false,
