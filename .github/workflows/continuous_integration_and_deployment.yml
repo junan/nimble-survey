@@ -16,8 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - run: sudo apt-fast install -y google-chrome
-      - uses: nanasess/setup-chromedriver@master
+      - run: |
+          sudo apt-get update
+          sudo apt-get --only-upgrade install google-chrome-stable
 
       - name: Install node packages
         run: npm install
