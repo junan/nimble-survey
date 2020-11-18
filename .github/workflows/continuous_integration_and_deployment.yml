@@ -16,6 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+      - run: sudo apt-fast install -y google-chrome
       - uses: nanasess/setup-chromedriver@master
 
       - name: Install node packages
