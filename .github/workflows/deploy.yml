@@ -2,9 +2,15 @@ name: Deploy to Heroku
 
 on:
   workflow_run:
-    workflows: ["Test"]
+    workflows:
+      - Test
+    branches:
+      - master
+      - development
+      - "chore/ci-cd"
     types:
       - completed
+  workflow_dispatch:
 
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}

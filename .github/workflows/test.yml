@@ -1,14 +1,7 @@
 name: Test
 
-on:
-  push:
-    branches:
-      - main
-      - develop
-      - "chore/**"
-      - "bug/**"
-      - "feature/**"
-      - "release/**"
+on: push
+
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   HEROKU_STAGING_APP: ${{ secrets.HEROKU_STAGING_APP }}
