@@ -5,7 +5,6 @@ on:
     workflows: ["Test"]
     types:
       - completed
-      - requested
 
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
