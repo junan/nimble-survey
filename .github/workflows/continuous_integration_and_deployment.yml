@@ -45,10 +45,12 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Deploy Production
+        if: github.ref == 'refs/heads/main'
         run: |
           git remote add production https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git
-          git push -f production origin/chore/ci-cd:refs/heads/master
+          git push -f production origin/main:refs/heads/master
       - name: Deploy Staging
+        if: github.ref == 'refs/heads/develop'
         run: |
           git remote add staging https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING_APP.git
-          git push -f staging origin/chore/ci-cd:refs/heads/master
+          git push -f staging origin/develop:refs/heads/master
