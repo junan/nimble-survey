@@ -11,12 +11,6 @@ on:
     types:
       - completed
 
-  push:
-    branches:
-      - main
-      - develop
-      - chore/ci-cd
-
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   HEROKU_STAGING_APP: ${{ secrets.HEROKU_STAGING_APP }}
