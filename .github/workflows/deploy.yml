@@ -4,10 +4,6 @@ on:
   workflow_run:
     workflows:
       - Test
-    branches:
-      - master
-      - development
-      - "chore/ci-cd"
     types:
       - completed
   workflow_dispatch:
