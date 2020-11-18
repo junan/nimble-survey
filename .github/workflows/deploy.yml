@@ -7,9 +7,10 @@ on:
     branches:
       - main
       - develop
-      - chore/ci-cd
+      - "chore/ci-cd"
     types:
       - completed
+      - requested
 
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
