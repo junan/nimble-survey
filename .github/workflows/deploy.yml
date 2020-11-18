@@ -2,12 +2,7 @@ name: Deploy to Heroku
 
 on:
   workflow_run:
-    workflows:
-      - Test
-    branches:
-      - main
-      - develop
-      - "chore/ci-cd"
+    workflows: ["Test"]
     types:
       - completed
       - requested
