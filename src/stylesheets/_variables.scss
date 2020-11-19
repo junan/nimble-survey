@@ -40,11 +40,11 @@ $primary: $white;
 $secondary: $gray;
 
 // Fonts
-$font-size-base: map-get($font-sizes, "md");
-$font-size-lg: map-get($font-sizes, "lg");
-$font-size-sm: map-get($font-sizes, "sm");
+$font-size-base: map-get($font-size, "md");
+$font-size-lg: map-get($font-size, "lg");
+$font-size-sm: map-get($font-size, "sm");
 
-$h2-font-size: map-get($font-sizes, "xl");
+$h2-font-size: map-get($font-size, "xl");
 $headings-font-weight: $font-weight-bold;
 
 $display1-size: 2.5rem; // 40px
@@ -62,7 +62,7 @@ $input-border-radius: 0.75rem;
 $border-radius: 0.75rem; // 12px
 $input-padding-y: 1rem; // 16px
 $input-padding-x: 0.75rem; // 12px
-$input-font-size: map-get($font-sizes, "md");
+$input-font-size: map-get($font-size, "md");
 $input-line-height: 1.375; // 22px
 $input-border-width: 0;
 
