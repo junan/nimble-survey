@@ -22,6 +22,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Deployement
+## Deployment
 
-Deployed to Heroku for [staging](https://nimble-survey-staging.herokuapp.com/) and [production](https://nimble-survey-production.herokuapp.com/) release
+Deploy to Heroku for [staging](https://nimble-survey-staging.herokuapp.com/) and [production](https://nimble-survey-production.herokuapp.com/) release
