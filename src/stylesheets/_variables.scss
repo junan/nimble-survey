@@ -12,14 +12,23 @@ $brand-gray: (
   backgound: hsl(240, 11%, 9%) // Woodsmoke
 );
 
+$brand-red: (
+  primary: hsl(343, 100%, 44%)  // Red Ribbon
+);
+
+$brand-blue: (
+  light: hsl(211, 100%, 50%),   // Azure Radiance
+  primary: hsl(223, 100%, 44%)  // Science Blue
+);
+
 // Fonts
-$font-size: (
-  xxs: 0.625rem,  // 10px
-  xs: 0.75rem,    // 12px
-  sm: 0.875rem,   // 14px
-  md: 1rem,       // 16px
-  lg: 1.125rem,   // 18px
-  xl: 1.25rem,    // 20px
+$font-sizes: (
+  xl: 2.125rem,           // 34px
+  lg: 1.25rem,            // 20px
+  md: 1.0625rem,          // 17px
+  sm: 0.9375rem,          // 15px
+  xs: 0.8125rem,          // 13px
+  xxs: 0.6875rem          // 11px
 );
 
 $font-weight-normal: 400;
@@ -34,17 +43,19 @@ $grays: map-merge((), $brand-gray);
 
 $white: #fff;
 $black: #000;
+$red: map-get($brand-red, 'primary');
+$blue: map-get($brand-blue, 'primary');
 $gray: map-get($brand-gray, 500);
 
 $primary: $white;
 $secondary: $gray;
 
 // Fonts
-$font-size-base: map-get($font-size, 'md');
-$font-size-lg: map-get($font-size, 'lg');
-$font-size-sm: map-get($font-size, 'sm');
+$font-size-base: map-get($font-sizes, 'md');
+$font-size-lg: map-get($font-sizes, 'lg');
+$font-size-sm: map-get($font-sizes, 'sm');
 
-$h2-font-size: map-get($font-size, 'xl');
+$h2-font-size: map-get($font-sizes, 'xl');
 $headings-font-weight: $font-weight-bold;
 
 $display1-size: 2.5rem; // 40px
@@ -59,18 +70,20 @@ $spacer: 1rem; // 16px
 // Form
 $input-bg: rgba($white, 0.18);
 $input-border-radius: 0.75rem;
-$border-radius: 0.75rem; // 12px
-$input-padding-y: 1rem; // 16px
-$input-padding-x: 0.75rem; // 12px
-$input-font-size: map-get($font-size, 'md');
-$input-line-height: 1.375; // 22px
+$border-radius: 0.75rem;            // 12px
+$input-padding-y: 1rem;             // 16px
+$input-padding-x: 0.75rem;          // 12px
+$input-line-height: 1.375;          // 22px
+$form-group-margin-bottom: 1.5rem;  // 24px
 $input-border-width: 0;
+$input-font-size: map-get($font-sizes, 'md');
 
 // Buttons
 $btn-border-radius: 0.625rem; // 10px
-$btn-line-height: 1.375; // 22px
-$btn-padding-y: 1rem; // 16px
-$btn-padding-x: 5rem; // 80px
+$btn-line-height: 1.375;      // 22px
+$btn-padding-y: 1rem;         // 16px
+$btn-padding-x: 5rem;         // 80px
+$btn-font-weight: $font-weight-bold;
 
 // Body
 $body-bg: map-get($grays, "background");
