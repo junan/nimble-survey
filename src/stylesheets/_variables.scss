@@ -22,8 +22,6 @@ $brand-blue: (
 );
 
 // Fonts
-$font-family-base: 'Neuzeit S LT Std', serif;
-
 $font-sizes: (
   xl: 2.125rem,           // 34px
   lg: 1.25rem,            // 20px
@@ -53,6 +51,8 @@ $primary: $white;
 $secondary: $gray;
 
 // Fonts
+$font-family-base: 'Neuzeit S LT Std', serif;
+
 $font-size-base: map-get($font-sizes, 'md');
 $font-size-lg: map-get($font-sizes, 'lg');
 $font-size-sm: map-get($font-sizes, 'sm');
