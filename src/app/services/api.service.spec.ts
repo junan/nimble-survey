@@ -40,12 +40,11 @@ describe('ApiService', () => {
             password: 'secret',
         };
 
-        const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
-
         service.signIn('api/v1/oauth/token', params).subscribe(data => {
             expect(data).toBe(response);
         });
 
+        const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
         expect(request.request.method).toBe('POST');
 
         request.flush(response);
