@@ -29,7 +29,6 @@ export class ApiService {
         return this.postRequest(apiUrl, data);
     }
 
-
     private postRequest(endpoint: string, data: object): Observable<any> {
         return this.http.post<any>(endpoint, data, this.headers).pipe(
             retry(1), catchError(this.handleError)
