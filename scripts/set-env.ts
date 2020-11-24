@@ -3,7 +3,7 @@ const {writeFile} = require('fs');
 // read environment variables from .env file
 require('dotenv').config();
 // read the command line arguments passed with yargs
-const isProduction = process.env.NODE_ENV;
+const isProduction = process.env.NODE_ENV === 'production';
 const targetPath = isProduction
     ? `./src/environments/environment.prod.ts`
     : `./src/environments/environment.ts`;
@@ -11,10 +11,10 @@ const targetPath = isProduction
 // in the process.env object thanks to dotenv
 const environmentFileContent = `
 export const environment = {
-   production: ${process.env.NODE_ENV},
+   production: ${isProduction},
    apiBaseUrl: '${process.env.SURVEY_API_HOST}',
    apiClientId: '${process.env.SURVEY_API_CLIENT_ID}',
-   apiClientSecret: '${process.env.SURVEY_API_CLIENT_SECRET}',
+   apiClientSecret: '${process.env.SURVEY_API_CLIENT_SECRET}'
 };
 `;
 // write the content to the respective file
