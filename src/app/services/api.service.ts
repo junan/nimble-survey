@@ -36,7 +36,7 @@ export class ApiService {
     }
 
     // Error handling
-    private handleError(error: any): void {
+    private handleError(error: any): Observable<any> {
         let errorMessage = '';
         if (error.error instanceof ErrorEvent) {
             // Get client-side error
