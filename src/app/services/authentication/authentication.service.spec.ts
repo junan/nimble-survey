@@ -20,33 +20,62 @@ describe('ApiService', () => {
     httpMock.verify();
   });
 
-  it('authenticates the sign in successfully', () => {
-    const response = {
-      data: {
-        id: 1,
-        type: 'token',
-        attributes: {
-          access_token: 'access_token',
-          token_type: 'Bearer',
-          expires_in: 7200,
-          refresh_token: 'refresh_token',
-          created_at: 1606198702
+  describe('Given the credential is valid', () => {
+    it('authenticates the sign in successfully', () => {
+      const response = {
+        data: {
+          id: 1,
+          type: 'token',
+          attributes: {
+            access_token: 'access_token',
+            token_type: 'Bearer',
+            expires_in: 7200,
+            refresh_token: 'refresh_token',
+            created_at: 1606198702
+          }
         }
-      }
-    };
+      };
 
-    const params = {
-      email: 'someone@example.com',
-      password: 'secret',
-    };
+      const params = {
+        email: 'someone@example.com',
+        password: 'secret',
+      };
 
-    service.signIn('api/v1/oauth/token', params).subscribe(data => {
-      expect(data).toBe(response);
+      service.signIn('api/v1/oauth/token', params).subscribe(data => {
+        expect(data).toBe(response);
+      });
+
+      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
+      expect(request.request.method).toBe('POST');
+
+      request.flush(response);
     });
+  });
+  describe('Given the credential is invalid', () => {
+    it('Does NOT authenticate the sign in successfully', () => {
+      const response = {
+        errors: [
+          {
+            source: 'Doorkeeper::OAuth::Error',
+            detail: 'The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.',
+            code: 'invalid_grant'
+          }
+        ]
+      };
 
-    const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
-    expect(request.request.method).toBe('POST');
+      const params = {
+        email: 'someone@example.com',
+        password: 'invalid-secret',
+      };
 
-    request.flush(response);
+      service.signIn('api/v1/oauth/token', params).subscribe(data => {
+        expect(data).toBe(response);
+      });
+
+      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
+      expect(request.request.method).toBe('POST');
+
+      request.flush(response);
+    });
   });
 });
