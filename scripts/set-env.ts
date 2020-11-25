@@ -1,12 +1,12 @@
-const {writeFile} = require('fs');
+const { writeFile } = require('fs');
 
 // read environment variables from .env file
 require('dotenv').config();
 // read the command line arguments passed with yargs
 const isProduction = process.env.NODE_ENV === 'production';
 const targetPath = isProduction
-    ? `./src/environments/environment.prod.ts`
-    : `./src/environments/environment.ts`;
+  ? './src/environments/environment.prod.ts'
+  : './src/environments/environment.ts';
 // we have access to our environment variables
 // in the process.env object thanks to dotenv
 const environmentFileContent = `
@@ -19,8 +19,8 @@ export const environment = {
 `;
 // write the content to the respective file
 writeFile(targetPath, environmentFileContent, function (error: any) {
-    if (error) {
-        console.log(error);
-    }
-    console.log(`Wrote variables to ${targetPath}`);
+  if (error) {
+    console.log(error);
+  }
+  console.log(`Wrote variables to ${targetPath}`);
 });
