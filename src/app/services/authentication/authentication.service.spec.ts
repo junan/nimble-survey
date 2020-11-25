@@ -1,18 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { ApiService } from './api.service';
-import { environment } from './../../environments/environment';
+import { AuthenticationService } from './../authentication/authentication.service';
+import { environment } from './../../../environments/environment';
 
 describe('ApiService', () => {
-  let service: ApiService;
+  let service: AuthenticationService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ApiService]
+      providers: [AuthenticationService]
     });
-    service = TestBed.inject(ApiService);
+    service = TestBed.inject(AuthenticationService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
