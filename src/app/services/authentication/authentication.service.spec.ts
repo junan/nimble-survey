@@ -51,6 +51,7 @@ describe('ApiService', () => {
       request.flush(response);
     });
   });
+
   describe('Given the credential is invalid', () => {
     it('Does NOT authenticate the sign in successfully', () => {
       const response = {
@@ -65,7 +66,7 @@ describe('ApiService', () => {
 
       const params = {
         email: 'someone@example.com',
-        password: 'invalid-secret',
+        password: 'invalid_secret',
       };
 
       service.signIn('api/v1/oauth/token', params).subscribe(data => {
