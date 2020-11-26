@@ -20,7 +20,10 @@ export abstract class BaseService {
   }
 
   postRequest(endpoint: string, data: object): Observable<any> {
-    return this.http.post<any>(endpoint, data, this.headers).pipe( retry(1), catchError(this.handleError), map(data => this.deserialize(data)));
+    return this.http.post<any>(endpoint, data, this.headers).pipe(
+      retry(1),
+      catchError(this.handleError),
+      map(response => this.deserialize(response)));
   }
 
   handleError(error: any): Observable<any> {
