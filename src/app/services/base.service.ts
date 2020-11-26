@@ -41,7 +41,7 @@ export abstract class BaseService {
   deserialize(data: any): Observable<any> {
     try {
       return this.deserializer.deserialize(data);
-    } catch (error) {
+    } catch {
       return data;
     }
   }
