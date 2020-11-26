@@ -39,6 +39,10 @@ export abstract class BaseService {
   }
 
   deserialize(data: any): Observable<any> {
-    return this.deserializer.deserialize(data);
+    try {
+      return this.deserializer.deserialize(data);
+    } catch (error) {
+      return data;
+    }
   }
 }

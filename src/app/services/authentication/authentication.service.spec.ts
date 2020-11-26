@@ -36,13 +36,22 @@ describe('ApiService', () => {
         }
       };
 
+      const deserializedResponse = {
+        id: 1,
+        accessToken: 'access_token',
+        tokenType: 'Bearer',
+        expiresIn: 7200,
+        refreshToken: 'refresh_token',
+        createdAt: 1606198702
+      };
+
       const params = {
         email: 'someone@example.com',
         password: 'secret',
       };
 
       service.signIn('api/v1/oauth/token', params).subscribe(data => {
-        expect(data).toBe(response);
+        expect(data).toEqual(deserializedResponse);
       });
 
       const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
