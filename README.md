@@ -28,7 +28,7 @@ Deploy to Heroku for [staging](https://nimble-survey-staging.herokuapp.com/) and
 
 ### SVG icons
 
-This application uses `svg-icon-sprite` npm package to generate icon sprite.Icon sprite located at `assets/images/icon-sprite.svg` which generated from SVG icons in `assets/images/icons`.
+This application uses `svg-icon-sprite` npm package to generate icon sprite. Icon sprite located at `assets/images/icon-sprite.svg` which generated from SVG icons in `assets/images/icons`.
 To generate the icon sprite run `npm run generate:sprite`. Use `svg-icon` tag with icon name in source path to display the icon from the sprite.
 
 ```html
