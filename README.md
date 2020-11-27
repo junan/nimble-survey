@@ -34,4 +34,3 @@ To generate the icon sprite run `npm run generate:sprite`. Use `svg-icon` tag wi
 ```html
 <svg-icon src="assets/images/icon-sprite.svg#<icon-name>" class="icon"></svg-icon>
 ```
-
