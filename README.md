@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Deployment
 
 Deploy to Heroku for [staging](https://nimble-survey-staging.herokuapp.com/) and [production](https://nimble-survey-production.herokuapp.com/) release
+
+### SVG icons
+
+This application uses `svg-icon-sprite` npm package to generate icon sprite.Icon sprite located at `assets/images/icon-sprite.svg` which generated from SVG icons in `assets/images/icons`.
+To generate the icon sprite run `npm run generate:sprite`. Use `svg-icon` tag with icon name in source path to display the icon from the sprite.
+
+```html
+<svg-icon src="assets/images/icon-sprite.svg#<icon-name>" class="icon"></svg-icon>
+```
+
