@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod",
-    "stylelint": "stylelint '**/*.scss'"
+    "stylelint": "stylelint '**/*.scss'",
+    "generate:sprite": "svg-icon-generate --folder=src/assets/images/icons --output=src/assets/images/icon-sprite.svg"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
     "path": "0.12.7",
     "rxjs": "6.6.0",
     "ts-jsonapi": "2.1.3",
+    "svg-icon-sprite": "1.1.1",
     "tslib": "2.0.0",
     "typescript": "4.0.2",
     "zone.js": "0.10.2"
