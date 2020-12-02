@@ -11,5 +11,4 @@ export class FormLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
