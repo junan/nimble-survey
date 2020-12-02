@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormLoginComponent } from '../auth/components/form-login/form-login.component';
-import { LoginComponent } from '../auth/pages/login/login.component';
+import { FormSignInComponent } from '../auth/components/form-sign-in/form-sign-in.component';
+import { SignInComponent } from '../auth/pages/sign-in/sign-in.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'sign_in', component: LoginComponent },
+  { path: 'sign_in', component: SignInComponent },
 ];
 
 @NgModule({
-  declarations: [FormLoginComponent, LoginComponent],
+  declarations: [FormSignInComponent, SignInComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
