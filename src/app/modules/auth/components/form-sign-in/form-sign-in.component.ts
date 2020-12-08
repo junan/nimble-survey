@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class FormSignInComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
