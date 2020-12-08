@@ -1,0 +1,12 @@
+@import '/src/stylesheets/functions/sizing';
+@import '/src/stylesheets/variables';
+
+.form-sign-in {
+  margin-top: rem(32px);
+
+  &__label {
+    font-weight: $font-weight-bold;
+    font-size: map-get($font-sizes, 'sm');
+    cursor: pointer;
+  }
+}
