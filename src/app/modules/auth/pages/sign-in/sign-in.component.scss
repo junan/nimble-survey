@@ -22,6 +22,7 @@
   padding: rem(10px);
 
   @include media-breakpoint-up(md) {
+    padding: 0;
     width: rem(400px);
   }
 
