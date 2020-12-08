@@ -7,6 +7,7 @@
   &__label {
     font-weight: $font-weight-bold;
     font-size: map-get($font-sizes, 'sm');
+
     cursor: pointer;
   }
 }
