@@ -1,5 +1,5 @@
-@import '/src/stylesheets/functions/sizing';
-@import '/src/stylesheets/variables';
+@import 'variables';
+@import 'functions/sizing';
 
 .form-sign-in {
   margin-top: rem(32px);
