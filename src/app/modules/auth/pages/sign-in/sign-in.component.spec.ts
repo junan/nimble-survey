@@ -7,7 +7,7 @@ describe('SignInComponent', () => {
   let baseElement: any;
 
   const SELECTORS = {
-    signInPage: '.sign-in-wrapper'
+    signInContent: '.sign-in-content'
   };
 
   beforeEach(async () => {
@@ -29,6 +29,6 @@ describe('SignInComponent', () => {
   });
 
   it('renders header', () => {
-    expect(baseElement.querySelector(SELECTORS.signInPage)).toBeTruthy();
+    expect(baseElement.querySelector(SELECTORS.signInContent)).toBeTruthy();
   });
 });
