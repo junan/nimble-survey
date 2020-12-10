@@ -5,6 +5,7 @@
 :host {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -13,7 +14,7 @@
   background-size: cover;
 }
 
-.sign-in-wrapper {
+.app-content {
   display: flex;
   width: rem(320px);
   flex-direction: column;
