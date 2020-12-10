@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HeaderComponent } from './header.component';
+import { AuthHeaderComponent } from './auth-header.component';
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('AuthHeaderComponent', () => {
+  let component: AuthHeaderComponent;
+  let fixture: ComponentFixture<AuthHeaderComponent>;
   let baseElement: any;
 
   const SELECTORS = {
@@ -13,13 +13,13 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeaderComponent]
+      declarations: [AuthHeaderComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(AuthHeaderComponent);
     component = fixture.componentInstance;
     baseElement = fixture.nativeElement;
     fixture.detectChanges();
