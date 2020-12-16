@@ -9,6 +9,7 @@
     "at-rule-empty-line-before": null,
     "block-closing-brace-newline-after": null,
     "scss/at-rule-no-unknown": true,
-    "no-empty-source": null
+    "no-empty-source": null,
+    "declaration-empty-line-before": null
   }
 }
