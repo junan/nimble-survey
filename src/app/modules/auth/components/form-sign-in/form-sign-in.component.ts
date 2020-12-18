@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {AuthenticationService} from '@authentication';
+import {environment} from '@environment';
 
 @Component({
   selector: 'app-form-sign-in',
@@ -10,7 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormSignInComponent implements OnInit {
   signInForm: any;
 
-  constructor() {}
+  constructor(private authService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
@@ -20,8 +22,11 @@ export class FormSignInComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("Submitted value is: ", this.signInForm.value);
-    console.log("Submitted email is: ", this.signInForm.value.email);
-    console.log("Submitted password is: ", this.signInForm.value.password);
+    const submittedData = {
+      grant_type: 'password',
+      email: this.signInForm.value.email,
+      password: this.signInForm.value.password,
+    }
+    this.authService.signIn('api/v1/oauth/token', submittedData).subscribe(res => console.log(res));
   }
 }

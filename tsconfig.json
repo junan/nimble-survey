@@ -21,7 +21,8 @@
       "dom"
     ],
     "paths": {
-      "@environment": ["environments/environment"]
+      "@environment": ["environments/environment"],
+      "@authentication": ["app/shared/services/authentication/authentication.service"],
     }
   },
   "angularCompilerOptions": {
