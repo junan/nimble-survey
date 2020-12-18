@@ -21,12 +21,7 @@ export class FormSignInComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    const submittedData = {
-      grant_type: 'password',
-      email: this.signInForm.value.email,
-      password: this.signInForm.value.password,
-    }
-    this.authService.signIn(submittedData).subscribe(res => console.log(res));
+  onSubmit(data: string): void {
+    this.authService.signIn(data).subscribe(res => console.log(res));
   }
 }
