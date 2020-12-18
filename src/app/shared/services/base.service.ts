@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Deserializer } from 'ts-jsonapi';
+import { environment } from '@environment';
 
 @Injectable()
 
@@ -20,13 +21,18 @@ export abstract class BaseService {
   }
 
   postRequest(endpoint: string, data: object): Observable<any> {
-    return this.http.post<any>(endpoint, data, this.headers).pipe(
+    const apiUrl = this.generateApiUrl(endpoint);
+    return this.http.post<any>(apiUrl, data, this.headers).pipe(
       retry(1),
       catchError(this.handleError),
       map(response => this.deserialize(response)));
   }
 
-  handleError(error: any): Observable<any> {
+  private generateApiUrl(endpoint: string): string {
+    return `${environment.apiBaseUrl}/api/${environment.apiVersion}/${endpoint}`;
+  }
+
+  private handleError(error: any): Observable<any> {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
@@ -38,7 +44,7 @@ export abstract class BaseService {
     return throwError(errorMessage);
   }
 
-  deserialize(data: any): Observable<any> {
+  private deserialize(data: any): Observable<any> {
     try {
       return this.deserializer.deserialize(data);
     } catch {

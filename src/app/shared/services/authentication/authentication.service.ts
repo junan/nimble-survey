@@ -8,8 +8,8 @@ import { environment } from '@environment';
 })
 
 export class AuthenticationService extends BaseService {
-  public signIn(endpoint: string, params: any): Observable<any> {
-    const apiUrl = `${environment.apiBaseUrl}/${endpoint}`;
+  signIn(params: any): Observable<any> {
+    const endpoint = 'oauth/token';
     const data = {
       grant_type: 'password',
       email: params.email,
@@ -18,6 +18,6 @@ export class AuthenticationService extends BaseService {
       client_secret: environment.apiClientSecret
     };
 
-    return this.postRequest(apiUrl, data);
+    return this.postRequest(endpoint, data);
   }
 }

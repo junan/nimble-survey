@@ -27,6 +27,6 @@ export class FormSignInComponent implements OnInit {
       email: this.signInForm.value.email,
       password: this.signInForm.value.password,
     }
-    this.authService.signIn('api/v1/oauth/token', submittedData).subscribe(res => console.log(res));
+    this.authService.signIn(submittedData).subscribe(res => console.log(res));
   }
 }
