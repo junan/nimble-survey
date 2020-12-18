@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   // TODO: redirecting to login url for now, later need to remove/refactor
-  { path: '', redirectTo: 'auth/sign-in', pathMatch: 'full' },
+  // { path: '', redirectTo: 'auth/sign-in', pathMatch: 'full' },
   // Lazy Loading auth modules, loading it only when the user navigates to the '/auth' route.
   // It will improve app loading performance as it will load module code on demand.
   { path: 'auth', loadChildren: () => import(`./modules/auth/auth.module`).then(m => m.AuthModule) }

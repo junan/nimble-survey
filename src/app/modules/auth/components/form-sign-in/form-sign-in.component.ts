@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {AuthenticationService} from '@authentication';
+import {AuthenticationService} from '@service/authentication/authentication.service';
+import { SessionService } from '@service/session/session.service';
+import { Router } from '@angular/router';
 import {environment} from '@environment';
 
 @Component({
@@ -12,7 +14,10 @@ import {environment} from '@environment';
 export class FormSignInComponent implements OnInit {
   signInForm: any;
 
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private authService: AuthenticationService,
+    private sessionService: SessionService,
+    private router: Router ) {}
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
@@ -22,6 +27,14 @@ export class FormSignInComponent implements OnInit {
   }
 
   onSubmit(data: string): void {
-    this.authService.signIn(data).subscribe(res => console.log(res));
+    this.authService.signIn(data).subscribe(response => {
+      this.storeAccessToken(response.accessToken);
+
+      // this.router.navigate(['/']);
+    });
+  }
+
+  storeAccessToken(token: string) {
+    this.sessionService.setAccessToken(token);
   }
 }

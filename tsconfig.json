@@ -22,7 +22,7 @@
     ],
     "paths": {
       "@environment": ["environments/environment"],
-      "@authentication": ["app/shared/services/authentication/authentication.service"],
+      "@service/*": ["app/shared/services/*"]
     }
   },
   "angularCompilerOptions": {
