@@ -30,7 +30,7 @@ export class FormSignInComponent implements OnInit {
     this.authService.signIn(data).subscribe(response => {
       this.storeAccessToken(response.accessToken);
 
-      // this.router.navigate(['/']);
+      this.router.navigate(['/']);
     });
   }
 
