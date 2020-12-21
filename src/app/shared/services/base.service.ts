@@ -21,18 +21,18 @@ export abstract class BaseService {
   }
 
   postRequest(endpoint: string, data: object): Observable<any> {
-    const apiUrl = this.generateApiUrl(endpoint);
+    const apiUrl = this._generateApiUrl(endpoint);
     return this.http.post<any>(apiUrl, data, this.headers).pipe(
       retry(1),
-      catchError(this.handleError),
-      map(response => this.deserialize(response)));
+      catchError(this._handleError),
+      map(response => this._deserialize(response)));
   }
 
-  private generateApiUrl(endpoint: string): string {
+  private _generateApiUrl(endpoint: string): string {
     return `${environment.apiBaseUrl}/api/${environment.apiVersion}/${endpoint}`;
   }
 
-  private handleError(error: any): Observable<any> {
+  private _handleError(error: any): Observable<any> {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
@@ -44,7 +44,7 @@ export abstract class BaseService {
     return throwError(errorMessage);
   }
 
-  private deserialize(data: any): Observable<any> {
+  private _deserialize(data: any): Observable<any> {
     try {
       return this.deserializer.deserialize(data);
     } catch {

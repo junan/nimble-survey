@@ -13,7 +13,7 @@ export class SessionService {
     localStorage.setItem(this.USER_ACCESS_TOKEN_KEY, accessToken);
   }
 
-  // isLoggedIn(): boolean {
-  //   return localStorage.getItem(this.USER_ACCESS_TOKEN_KEY) != null && localStorage.getItem(this.USER_TOKEN_TYPE) != null;
-  // }
+  signedIn(): boolean {
+    return localStorage.getItem(this.USER_ACCESS_TOKEN_KEY) != null;
+  }
 }
