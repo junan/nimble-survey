@@ -9,7 +9,5 @@ export class SurveyListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log("Inside SurveyListComponent");
-  }
+  ngOnInit(): void {}
 }

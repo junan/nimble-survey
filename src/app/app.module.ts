@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { SurveyModule } from './modules/survey/survey.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { SurveyModule } from './modules/survey/survey.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
-    SurveyModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SignedInAuthGuardService } from './signed-in-guard.service';
+import { SignedInAuthGuardService } from './signed-in-auth-guard.service';
 
-describe('SignedInGuardService', () => {
+describe('SignedInuthGuardService', () => {
   let service: SignedInAuthGuardService;
 
   beforeEach(() => {
