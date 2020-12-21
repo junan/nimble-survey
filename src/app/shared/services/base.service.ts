@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Deserializer } from 'ts-jsonapi';
 import { environment } from '@environment';
+import { constants } from '../contants';
 
 @Injectable()
 
 export abstract class BaseService {
-  headers: object = {
+  readonly headers: object = {
     'Content-Type': 'application/json',
   };
 
@@ -17,10 +18,10 @@ export abstract class BaseService {
     keyForAttribute: 'camelCase'
   });
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient){
   }
 
-  postRequest(endpoint: string, data: object): Observable<any> {
+  postRequest(endpoint: string, data: object): Observable<any>{
     const apiUrl = this._generateApiUrl(endpoint);
     return this.http.post<any>(apiUrl, data, this.headers).pipe(
       retry(1),
@@ -28,23 +29,28 @@ export abstract class BaseService {
       map(response => this._deserialize(response)));
   }
 
-  private _generateApiUrl(endpoint: string): string {
+  private _generateApiUrl(endpoint: string): string{
     return `${environment.apiBaseUrl}/api/${environment.apiVersion}/${endpoint}`;
   }
 
-  private _handleError(error: any): Observable<any> {
+  private _handleError(error: any): Observable<any>{
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message} \n ${error}`;
+      // TODO: need to refactor after fixing https://github.com/nimblehq/nimble-survey-web/issues/49
+      if (error.status === 400) {
+        errorMessage = constants.INVALID_CREDENTIAL_ERROR_MESSAGE;
+      } else {
+        errorMessage = constants.DEFAULT_ERROR_MESSAGE;
+      }
     }
     return throwError(errorMessage);
   }
 
-  private _deserialize(data: any): Observable<any> {
+  private _deserialize(data: any): Observable<any>{
     try {
       return this.deserializer.deserialize(data);
     } catch {

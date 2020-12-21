@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {AuthenticationService} from '@service/authentication/authentication.service';
+import { AuthenticationService } from '@service/authentication/authentication.service';
 import { SessionService } from '@service/session/session.service';
 import { Router } from '@angular/router';
 
@@ -16,20 +16,23 @@ export class FormSignInComponent implements OnInit {
   constructor(
     private _authService: AuthenticationService,
     private _sessionService: SessionService,
-    private _router: Router ) {}
+    private _router: Router){
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.signInForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required])
     });
   }
 
-  onSubmit(data: string): void {
+  onSubmit(data: string): void{
     this._authService.signIn(data).subscribe(response => {
       this._sessionService.setAccessToken(response.accessToken);
 
       this._router.navigate(['/']);
+    }, error => {
+      console.log("Error:", error);
     });
   }
 }
