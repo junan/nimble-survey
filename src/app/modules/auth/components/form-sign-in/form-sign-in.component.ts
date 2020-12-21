@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 export class FormSignInComponent implements OnInit {
   signInForm: any;
+  errorMessage = '';
 
   constructor(
     private _authService: AuthenticationService,
@@ -22,17 +23,20 @@ export class FormSignInComponent implements OnInit {
   ngOnInit(): void{
     this.signInForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required]),
     });
   }
 
   onSubmit(data: string): void{
+    this.errorMessage = '';
+
     this._authService.signIn(data).subscribe(response => {
       this._sessionService.setAccessToken(response.accessToken);
 
       this._router.navigate(['/']);
     }, error => {
-      console.log("Error:", error);
+      this.errorMessage = error;
+      console.log("this.errorMessage", this.errorMessage);
     });
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SurveyRoutingModule } from './survey-routing.module';
 
@@ -9,7 +9,8 @@ import { SurveyListComponent } from '../survey/pages/survey-list/survey-list.com
   imports: [
     CommonModule,
     SurveyRoutingModule
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class SurveyModule { }

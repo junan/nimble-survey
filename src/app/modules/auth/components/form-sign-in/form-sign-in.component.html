@@ -1,3 +1,7 @@
+<div *ngIf="errorMessage !== ''">
+  <app-alert [errorMessage]="errorMessage"></app-alert>
+</div>
+
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)" class="form-sign-in">
   <div class="form-group">
     <label for="email" class="form-sign-in__label">Email</label>
