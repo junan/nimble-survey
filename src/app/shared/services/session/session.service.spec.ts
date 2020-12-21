@@ -10,7 +10,7 @@ describe('SessionService', () => {
     service = TestBed.inject(SessionService);
   });
 
-  it('should be created', () => {
+  it('creates the component', () => {
     expect(service).toBeTruthy();
   });
 });

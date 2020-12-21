@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./survey-list.component.scss']
 })
 export class SurveyListComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {}

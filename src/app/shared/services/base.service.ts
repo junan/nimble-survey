@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Deserializer } from 'ts-jsonapi';
 import { environment } from '@environment';
-import { constants } from '../contants';
+import { constants } from '@constants';
 
 @Injectable()
 

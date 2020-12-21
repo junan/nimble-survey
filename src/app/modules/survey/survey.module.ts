@@ -13,4 +13,4 @@ import { SurveyListComponent } from '../survey/pages/survey-list/survey-list.com
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class SurveyModule { }
+export class SurveyModule {}

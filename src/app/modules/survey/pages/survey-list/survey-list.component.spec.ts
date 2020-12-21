@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SurveyListComponent } from './survey-list.component';
 
 describe('SurveyListComponent', () => {
