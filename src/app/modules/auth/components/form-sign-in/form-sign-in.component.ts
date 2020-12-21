@@ -36,7 +36,6 @@ export class FormSignInComponent implements OnInit {
       this._router.navigate(['/']);
     }, error => {
       this.errorMessage = error;
-      console.log("this.errorMessage", this.errorMessage);
     });
   }
 }
