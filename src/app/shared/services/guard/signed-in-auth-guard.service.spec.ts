@@ -13,7 +13,7 @@ describe('SignedInuthGuardService', () => {
     service = TestBed.inject(SignedInAuthGuardService);
   });
 
-  it('should be created', () => {
+  it('creates the component', () => {
     expect(service).toBeTruthy();
   });
 });
