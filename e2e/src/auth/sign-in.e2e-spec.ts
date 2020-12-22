@@ -1,4 +1,4 @@
-import { browser, logging } from 'protractor';
+import { browser, logging, until } from 'protractor';
 import { SignInPage } from './sign-in.po';
 
 describe('Login tests', () => {
@@ -7,16 +7,29 @@ describe('Login tests', () => {
   beforeEach(() => {
     browser.waitForAngularEnabled(false);
     page = new SignInPage();
-    page.navigateTo();
   });
 
-  describe('Given valid credentials', () => {
-    it('enables the form submit button', async () => {
+  describe('Given the credentials is valid', () => {
+    it('enables the submit button', async () => {
+      await page.navigateTo();
       await page.fillEmail('john@example.com');
       await page.fillPassword('secret');
 
       expect(await page.getSubmitButton().getAttribute('disabled')).toBeFalsy();
     });
+
+    it('redirects to the root path after sign in', async () => {
+      await page.navigateTo();
+      await page.LoginWith('john@example.com', 'secret');
+
+      browser.wait(() => {
+        return until.urlIs('/');
+      });
+    });
+  });
+
+  describe('Given the credentials is invalid', () => {
+
   });
 
   afterEach(async () => {
