@@ -1,7 +1,7 @@
 import { browser, logging, until } from 'protractor';
 import { SignInPage } from './sign-in.po';
 
-describe('Login tests', () => {
+describe('SignIn', () => {
   let page: SignInPage;
 
   beforeEach( async () => {
