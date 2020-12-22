@@ -1,34 +1,37 @@
-import { browser, by, element, WebElement } from 'protractor';
-import { AppPage } from '../app.po';
+import { browser, by, element, ElementFinder, WebElement } from 'protractor';
 
-export class SignInPage extends AppPage {
-  async navigateTo(): Promise<unknown> {
+export class SignInPage {
+  async navigateTo(): Promise<unknown>{
     return browser.get('/auth/sign-in');
   }
 
-  async LoginWith(email: string, password: string): Promise<void> {
-    this.fillEmail(email);
-    this.fillPassword(password);
-    this.submitForm();
+  emailInput(): ElementFinder{
+    return element(by.id('email'));
   }
 
-  async fillEmail(email: string): Promise<void> {
-    element(by.css('input[name="email"]')).sendKeys(email);
+  passwordInput(): ElementFinder{
+    return element(by.id('password'));
   }
 
-  async fillPassword(password: string): Promise<void> {
-    element(by.css('input[name="password"]')).sendKeys(password);
+  async fillIn(target: ElementFinder, value: string): Promise<void>{
+    target.sendKeys(value);
   }
 
-  async submitForm(): Promise<void> {
+  async submitForm(): Promise<void>{
     element(by.buttonText('Sign in')).click();
   }
 
-  getSubmitButton(): WebElement {
+  async signIn(email: string, password: string): Promise<void>{
+    this.fillIn(this.emailInput(), email);
+    this.fillIn(this.passwordInput(), password);
+    this.submitForm();
+  }
+
+  submitButton(): WebElement{
     return element(by.buttonText('Sign in')).getWebElement();
   }
 
-  getAlert(): WebElement {
+  alert(): WebElement{
     return element(by.className('alert__message')).getWebElement();
   }
 }
