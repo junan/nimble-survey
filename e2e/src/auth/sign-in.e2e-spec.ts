@@ -5,7 +5,6 @@ describe('Login tests', () => {
   let page: SignInPage;
 
   beforeEach(() => {
-    browser.waitForAngularEnabled(false);
     page = new SignInPage();
   });
 
@@ -29,14 +28,25 @@ describe('Login tests', () => {
   });
 
   describe('Given the credentials is invalid', () => {
+    it('disables the submit button', async () => {
+      await page.navigateTo();
+      await page.fillEmail('');
+      await page.fillPassword('secret');
 
+      expect(await page.getSubmitButton().getAttribute('disabled')).toBeTruthy();
+    });
+
+    it('displays the error message', async () => {
+      await page.LoginWith('invalid@email.com', 'secret');
+
+      browser.wait(() => {
+        return until.elementIsVisible(page.getAlert());
+      }).then(() => {
+        browser.wait(() => {
+          return until.elementTextIs(page.getAlert(), 'Something went wrong. Please try again!');
+        });
+      });
+    });
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
-  });
 });
