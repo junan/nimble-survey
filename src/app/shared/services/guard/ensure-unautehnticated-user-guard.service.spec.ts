@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SessionService } from '@service/session/session.service';
-import { SignedInAuthGuardService } from './signed-in-auth-guard.service';
+import { EnsureUnauthenticatedUserGuardService } from './ensure-unautehnticated-user-guard.service';
 
-describe('SignedInAuthGuardService', () => {
-  let guardService: SignedInAuthGuardService;
+describe('EnsureUnauthenticatedUserGuardService', () => {
+  let guardService: EnsureUnauthenticatedUserGuardService;
   let sessionService: SessionService;
 
   const routeMock: any = { snapshot: {}};
@@ -14,11 +14,11 @@ describe('SignedInAuthGuardService', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule]
     });
-    guardService = TestBed.inject(SignedInAuthGuardService);
+    guardService = TestBed.inject(EnsureUnauthenticatedUserGuardService);
     sessionService = TestBed.inject(SessionService);
   });
 
-  it('creates SignedInAuthGuardService', () => {
+  it('creates EnsureUnauthenticatedUserGuardService', () => {
     expect(guardService).toBeTruthy();
   });
 
