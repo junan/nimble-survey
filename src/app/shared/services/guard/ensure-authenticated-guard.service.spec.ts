@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SessionService } from '@service/session/session.service';
-import { AuthGuardService } from './auth-guard.service';
+import { EnsureAuthenticatedGuardService } from './ensure-authenticated-user-guard.service';
 
-describe('AuthGuardService', () => {
-  let guardService: AuthGuardService;
+describe('EnsureAuthenticatedGuardService', () => {
+  let guardService: EnsureAuthenticatedGuardService;
   let sessionService: SessionService;
 
   const routeMock: any = { snapshot: {}};
@@ -15,7 +15,7 @@ describe('AuthGuardService', () => {
       imports: [RouterTestingModule]
     });
     sessionService = TestBed.inject(SessionService);
-    guardService = TestBed.inject(AuthGuardService);
+    guardService = TestBed.inject(EnsureAuthenticatedGuardService);
   });
 
   it('creates guardService', () => {

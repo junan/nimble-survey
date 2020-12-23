@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuardService } from '@service/guard/auth-guard.service';
+import { EnsureAuthenticatedGuardService } from '@service/guard/ensure-authenticated-user-guard.service';
 
 import { SurveyListComponent } from './pages/survey-list/survey-list.component';
 
 const routes: Routes = [
   {
-    path: '', canActivate: [AuthGuardService], data: { role: 'signedInUser' }, children: [
-      // All paths goes here will need to be passed AuthGuardService authentication to access it
+    path: '', canActivate: [EnsureAuthenticatedGuardService], data: { role: 'signedInUser' }, children: [
+      // All paths goes here will need to be passed EnsureAuthenticatedGuardService authentication to access it
       { path: '', component: SurveyListComponent },
     ]
   }
