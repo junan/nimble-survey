@@ -25,7 +25,7 @@ describe('AuthGuardService', () => {
   describe('#canActivate', () => {
     describe('Given the user is signed in', () => {
       it('returns true', () => {
-        spyOn(sessionService, 'signedIn').and.returnValue(true);
+        spyOn(sessionService, 'isSignedIn').and.returnValue(true);
 
         expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(true);
       });
@@ -33,7 +33,7 @@ describe('AuthGuardService', () => {
 
     describe('Given the user is NOT signed in', () => {
       it('returns false', () => {
-        spyOn(sessionService, 'signedIn').and.returnValue(false);
+        spyOn(sessionService, 'isSignedIn').and.returnValue(false);
 
         expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(false);
       });

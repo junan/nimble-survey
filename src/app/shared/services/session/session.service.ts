@@ -12,7 +12,7 @@ export class SessionService {
     localStorage.setItem(constants.USER_ACCESS_TOKEN_KEY, accessToken);
   }
 
-  signedIn(): boolean {
+  isSignedIn(): boolean {
     return localStorage.getItem(constants.USER_ACCESS_TOKEN_KEY) != null;
   }
 }

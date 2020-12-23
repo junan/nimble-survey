@@ -17,7 +17,7 @@ export class SignedInAuthGuardService implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
 
-    if (this._sessionService.signedIn()) {
+    if (this._sessionService.isSignedIn()) {
       this._router.navigate(['/']);
       return false;
     } else {
