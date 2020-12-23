@@ -9,7 +9,7 @@ import { environment } from '@environment';
 
 export class AuthenticationService extends BaseService {
   signIn(params: any): Observable<any> {
-    const endpoint = 'oauth/token';
+    const endpoint = `${environment.signInApiVersion}/oauth/token`;
     const data = {
       grant_type: 'password',
       email: params.email,

@@ -54,7 +54,7 @@ describe('ApiService', () => {
         expect(data).toEqual(deserializedResponse);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.apiVersion}/oauth/token`);
+      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);
@@ -82,7 +82,7 @@ describe('ApiService', () => {
         expect(data).toBe(response);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.apiVersion}/oauth/token`);
+      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);

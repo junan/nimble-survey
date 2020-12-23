@@ -12,7 +12,7 @@ const targetPath = isProduction
 const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
-   apiVersion: '${process.env.SIGN_IN_API_VERSION}',
+   signInApiVersion: '${process.env.SIGN_IN_API_VERSION}',
    apiBaseUrl: '${process.env.SURVEY_API_HOST}',
    apiClientId: '${process.env.SURVEY_API_CLIENT_ID}',
    apiClientSecret: '${process.env.SURVEY_API_CLIENT_SECRET}'

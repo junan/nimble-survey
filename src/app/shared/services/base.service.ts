@@ -30,7 +30,7 @@ export abstract class BaseService {
   }
 
   private _generateApiUrl(endpoint: string): string{
-    return `${environment.apiBaseUrl}/api/${environment.apiVersion}/${endpoint}`;
+    return `${environment.apiBaseUrl}/api/${endpoint}`;
   }
 
   private _handleError(error: any): Observable<any>{
