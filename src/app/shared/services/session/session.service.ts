@@ -13,6 +13,6 @@ export class SessionService {
   }
 
   isSignedIn(): boolean {
-    return localStorage.getItem(constants.USER_ACCESS_TOKEN_KEY) != null;
+    return Boolean(localStorage.getItem(constants.USER_ACCESS_TOKEN_KEY));
   }
 }
