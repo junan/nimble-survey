@@ -6,7 +6,7 @@ import { SessionService } from '@service/session/session.service';
   providedIn: 'root'
 })
 
-export class EnsureAuthenticatedGuardService implements CanActivate {
+export class EnsureAuthenticatedUserGuardService implements CanActivate {
   constructor(
     private _sessionService: SessionService,
     private _router: Router

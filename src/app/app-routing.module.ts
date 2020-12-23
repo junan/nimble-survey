@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { AppComponent } from './app.component';
+import { EnsureAuthenticatedUserGuardService } from '@service/guard/ensure-authenticated-user-guard.service';
 
 const routes: Routes = [
   // Lazy Loading auth modules, loading it only when the user navigates to the '/auth' route.
   // It will improve app loading performance as it will load module code on demand.
   { path: 'auth', loadChildren: () => import(`./modules/auth/auth.module`).then(m => m.AuthModule) },
-  { path: '', loadChildren: () => import(`./modules/survey/survey.module`).then(m => m.SurveyModule) }
+  { path: '', component: AppComponent, canActivate: [EnsureAuthenticatedUserGuardService]  }
 ];
 
 @NgModule({
