@@ -4,6 +4,7 @@ import { AuthenticationService } from '@service/authentication/authentication.se
 import { environment } from '@environment';
 
 describe('ApiService', () => {
+  const signInApiUrl = `${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`;
   let service: AuthenticationService;
   let httpMock: HttpTestingController;
 
@@ -54,7 +55,7 @@ describe('ApiService', () => {
         expect(data).toEqual(deserializedResponse);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`);
+      const request = httpMock.expectOne(signInApiUrl);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);
@@ -82,7 +83,7 @@ describe('ApiService', () => {
         expect(data).toBe(response);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`);
+      const request = httpMock.expectOne(signInApiUrl);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);
