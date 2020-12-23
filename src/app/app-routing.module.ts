@@ -7,6 +7,7 @@ const routes: Routes = [
   // Lazy Loading auth modules, loading it only when the user navigates to the '/auth' route.
   // It will improve app loading performance as it will load module code on demand.
   { path: 'auth', loadChildren: () => import(`./modules/auth/auth.module`).then(m => m.AuthModule) },
+  // TODO: Rendering the AppComponent for now, will refactor if after when work on survey module later
   { path: '', component: AppComponent, canActivate: [EnsureAuthenticatedUserGuardService]  }
 ];
 
