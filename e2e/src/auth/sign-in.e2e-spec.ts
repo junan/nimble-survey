@@ -9,7 +9,7 @@ describe('SignIn', () => {
     await page.navigateTo();
   });
 
-  describe('Given the credentials is valid', () => {
+  describe('Given valid credentials', () => {
     it('enables the submit button', async () => {
       await page.fillIn(page.emailInput(), 'john@example.com');
       await page.fillIn(page.passwordInput(), 'secret');
@@ -26,7 +26,7 @@ describe('SignIn', () => {
     });
   });
 
-  describe('Given the credentials is invalid', () => {
+  describe('Given invalid credentials', () => {
     it('disables the submit button', async () => {
       await page.fillIn(page.emailInput(), '');
       await page.fillIn(page.passwordInput(), 'secret');
