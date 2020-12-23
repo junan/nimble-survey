@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Deserializer } from 'ts-jsonapi';
 import { environment } from '@environment';
-import { constants } from '@constants';
+import { errorMessages } from '../error-messages';
 
 @Injectable()
 
@@ -42,9 +42,9 @@ export abstract class BaseService {
       // Get server-side error
       // TODO: need to refactor after fixing https://github.com/nimblehq/nimble-survey-web/issues/49
       if (error.status === 400) {
-        errorMessage = constants.INVALID_CREDENTIAL_ERROR_MESSAGE;
+        errorMessage = errorMessages.INVALID_CREDENTIAL_ERROR_MESSAGE;
       } else {
-        errorMessage = constants.DEFAULT_ERROR_MESSAGE;
+        errorMessage = errorMessages.DEFAULT_ERROR_MESSAGE;
       }
     }
     return throwError(errorMessage);
