@@ -4,7 +4,7 @@ import { AuthenticationService } from '@service/authentication/authentication.se
 import { environment } from '@environment';
 
 describe('ApiService', () => {
-  const signInApiUrl = `${environment.apiBaseUrl}/api/${environment.signInApiVersion}/oauth/token`;
+  const signInApiUrl = `${environment.apiBaseUrl}/api/v1/oauth/token`;
   let service: AuthenticationService;
   let httpMock: HttpTestingController;
 

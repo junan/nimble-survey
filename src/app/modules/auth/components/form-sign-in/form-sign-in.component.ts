@@ -27,7 +27,7 @@ export class FormSignInComponent implements OnInit {
     });
   }
 
-  onSubmit(data: string): void{
+  onSubmit(data: any): void{
     this.errorMessage = '';
 
     this._authService.signIn(data).subscribe(response => {

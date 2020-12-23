@@ -1,13 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { throwError, of } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FormSignInComponent } from './form-sign-in.component';
+import { AuthenticationService } from '@service/authentication/authentication.service';
 
 describe('FormSignInComponent', () => {
   let component: FormSignInComponent;
   let fixture: ComponentFixture<FormSignInComponent>;
   let baseElement: any;
+  let authenticationService: any;
+  let router: any;
 
   const SELECTORS = {
     emailField: '.form-sign-in input[type="email"]',
@@ -28,6 +33,8 @@ describe('FormSignInComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FormSignInComponent);
+    authenticationService = TestBed.inject(AuthenticationService);
+    router = TestBed.inject(Router);
     component = fixture.componentInstance;
     baseElement = fixture.nativeElement;
     fixture.detectChanges();
@@ -41,5 +48,38 @@ describe('FormSignInComponent', () => {
     expect(baseElement.querySelector(SELECTORS.emailField)).toBeTruthy();
     expect(baseElement.querySelector(SELECTORS.passwordField)).toBeTruthy();
     expect(baseElement.querySelector(SELECTORS.submitButton)).toBeTruthy();
+  });
+
+  describe('#onSubmit', () => {
+    describe('Given valid credentials', () => {
+      it('navigates to the root path', () => {
+        const data = { email: 'john@example.com', password: 'secret' };
+        const response = {
+          id: 1,
+          accessToken: 'access_token',
+          tokenType: 'Bearer',
+          expiresIn: 7200,
+          refreshToken: 'refresh_token',
+          createdAt: 1606198702
+        };
+
+        spyOn(authenticationService, 'signIn').and.returnValue(of([response]));
+        spyOn(router, 'navigate').and.stub();
+
+        component.onSubmit(data);
+        expect(router.navigate).toHaveBeenCalledWith(['/']);
+      });
+    });
+
+    describe('Given invalid credentials', () => {
+      it('sets error message to errorMessage variable', () => {
+        const data = { email: 'john@example.com', password: 'invalid-pass' };
+        const expectedErrorMessage = 'Email or Password is invalid. Please try again.';
+        spyOn(authenticationService, 'signIn').and.returnValue(throwError(expectedErrorMessage));
+
+        component.onSubmit(data);
+        expect(component.errorMessage).toBe(expectedErrorMessage);
+      });
+    });
   });
 });
