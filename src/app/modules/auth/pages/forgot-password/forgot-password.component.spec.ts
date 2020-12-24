@@ -8,9 +8,8 @@ describe('ForgotPasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForgotPasswordComponent ]
-    })
-    .compileComponents();
+      declarations: [ForgotPasswordComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ForgotPasswordComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('renders the component', () => {
     expect(component).toBeTruthy();
   });
 });
