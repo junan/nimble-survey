@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FormForgotPasswordComponent } from './form-forgot-password.component';
 
 describe('FormForgotPasswordComponent', () => {
@@ -8,9 +7,8 @@ describe('FormForgotPasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormForgotPasswordComponent ]
-    })
-    .compileComponents();
+      declarations: [FormForgotPasswordComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +17,7 @@ describe('FormForgotPasswordComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('renders the component', () => {
     expect(component).toBeTruthy();
   });
 });
