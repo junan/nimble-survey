@@ -28,7 +28,7 @@ describe('FormForgotPasswordComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders forgot form', () => {
+  it('renders forgot password form', () => {
     expect(baseElement.querySelector(SELECTORS.emailField)).toBeTruthy();
     expect(baseElement.querySelector(SELECTORS.submitButton)).toBeTruthy();
   });
