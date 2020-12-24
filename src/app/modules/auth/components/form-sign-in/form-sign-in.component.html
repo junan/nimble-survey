@@ -1,17 +1,43 @@
-<div *ngIf="errorMessage !== ''">
-  <app-alert [errorMessage]="errorMessage"></app-alert>
+<div *ngIf="alertMessage !== ''">
+  <app-alert
+    [iconSource]="alertIconSource"
+    [title]="alertTitle"
+    [message]="alertMessage"
+  ></app-alert>
 </div>
 
-<form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)" class="form-sign-in">
+<form
+  [formGroup]="signInForm"
+  (ngSubmit)="onSubmit(signInForm.value)"
+  class="form-sign-in"
+>
   <div class="form-group">
     <label for="email" class="form-sign-in__label">Email</label>
-    <input formControlName="email" name="email" id="email" type="email" class="form-control" required
+    <input
+      formControlName="email"
+      name="email"
+      id="email"
+      type="email"
+      class="form-control"
+      required
     />
   </div>
   <div class="form-group">
     <label for="password" class="form-sign-in__label">Password</label>
-    <input formControlName="password" name="password" type="password" id="password" class="form-control" required
+    <input
+      formControlName="password"
+      name="password"
+      type="password"
+      id="password"
+      class="form-control"
+      required
     />
   </div>
-  <button [disabled]="!signInForm.valid" class="btn btn-primary btn-block" type="submit">Sign in</button>
+  <button
+    [disabled]="!signInForm.valid"
+    class="btn btn-primary btn-block"
+    type="submit"
+  >
+    Sign in
+  </button>
 </form>
