@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-forgot-password.component.scss'],
 })
 export class FormForgotPasswordComponent implements OnInit {
+  errorMessage = 'We’ve email you instructions to reset your password.';
   constructor() {}
 
   ngOnInit(): void {}

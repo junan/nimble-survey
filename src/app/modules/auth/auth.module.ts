@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
@@ -19,7 +19,7 @@ import { AlertComponent } from 'app/shared/components/alert/alert.component';
     ForgotPasswordComponent,
     AlertComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, AuthRoutingModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, AuthRoutingModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AuthModule {}
