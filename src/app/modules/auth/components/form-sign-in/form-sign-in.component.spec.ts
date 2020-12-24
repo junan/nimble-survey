@@ -70,7 +70,8 @@ describe('FormSignInComponent', () => {
     describe('Given invalid credentials', () => {
       it('sets error message to alertMessage variable', () => {
         const data = { email: 'john@example.com', password: 'invalid-pass' };
-        const expectedAlertMessage = 'Email or Password is invalid. Please try again.';
+        const expectedAlertMessage =
+          'Email or Password is invalid. Please try again.';
         spyOn(authenticationService, 'signIn').and.returnValue(
           throwError(expectedAlertMessage)
         );

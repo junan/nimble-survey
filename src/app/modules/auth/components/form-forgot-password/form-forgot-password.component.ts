@@ -7,10 +7,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-forgot-password.component.scss'],
 })
 export class FormForgotPasswordComponent implements OnInit {
-  forgotPasswordForm: any;
-  alertIcon = '';
-  alertTitle = '';
-  alertMessage = '';
+  alertTitle = 'Check your email.';
+  alertMessage = 'We’ve email you instructions to reset your password.';
+  alertIcon = 'bell';
 
   constructor() {}
 

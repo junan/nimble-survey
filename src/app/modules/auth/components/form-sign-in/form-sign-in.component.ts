@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class FormSignInComponent implements OnInit {
   signInForm: any;
-  alertIcon = 'error';
-  alertTitle = 'Error';
   alertMessage = '';
 
   constructor(
