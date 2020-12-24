@@ -1,8 +1,18 @@
 <div class="alert alert--dark">
   <div class="alert__icon">
-    <svg-icon src="{{ iconSource }}" class="icon"></svg-icon>
+    <ng-template [ngIf]="icon == 'error'">
+      <svg-icon
+        src="assets/images/icon-sprite.svg#error"
+        class="icon"
+      ></svg-icon>
+    </ng-template>
+    <ng-template [ngIf]="icon == 'notification'">
+      <svg-icon
+        src="assets/images/icon-sprite.svg#notification"
+        class="icon"
+      ></svg-icon>
+    </ng-template>
   </div>
-
   <div class="alert__content">
     <div class="alert__title">{{ title }}</div>
     <div class="alert__message">

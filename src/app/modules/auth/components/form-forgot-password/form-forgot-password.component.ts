@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-forgot-password.component.scss'],
 })
 export class FormForgotPasswordComponent implements OnInit {
-  alertIconSource = 'assets/images/icon-sprite.svg#notification';
+  alertIcon = 'notification';
   alertTitle = 'Check your email.';
   alertMessage = 'We’ve email you instructions to reset your password.';
 

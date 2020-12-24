@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class FormSignInComponent implements OnInit {
   signInForm: any;
-  alertIconSource = 'assets/images/icon-sprite.svg#error';
+  alertIcon = 'error';
   alertTitle = 'Error';
   alertMessage = '';
 

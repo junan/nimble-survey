@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
   @Input() message = '';
-  @Input() iconSource = '';
+  @Input() icon = '';
   @Input() title = '';
 
   constructor() {}
