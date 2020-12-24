@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot-password.component.scss'],
 })
 export class ForgotPasswordComponent implements OnInit {
+  headerSubTitle =
+    'Enter your email to receive instructions for resetting your password.';
+
   constructor() {}
 
   ngOnInit(): void {}
