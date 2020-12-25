@@ -1,7 +1,7 @@
 @import "/src/stylesheets/functions/sizing";
 @import "/src/stylesheets/variables";
 @import "~bootstrap/scss/bootstrap-grid.scss";
-@import "../../common-style/form-layout.scss";
+@import "auth/common-style/form-layout";
 
 .sign-in-content,
 .sign-in-header {
