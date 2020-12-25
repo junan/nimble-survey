@@ -10,7 +10,7 @@
     "test": "npm run config && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "npm run config && ng build --prod",
     "stylelint": "stylelint '**/*.scss'",
     "generate:sprite": "svg-icon-generate --folder=src/assets/images/icons --output=src/assets/images/icon-sprite.svg"
   },
