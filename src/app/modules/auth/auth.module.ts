@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthHeaderComponent } from '../auth/components/auth-header/auth-header.component';
-import { FormSignInComponent } from '../auth/components/form-sign-in/form-sign-in.component';
-import { SignInComponent } from '../auth/pages/sign-in/sign-in.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
 
-const routes: Routes = [
-  { path: 'sign-in', component: SignInComponent },
-];
+import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
+import { FormSignInComponent } from './components/form-sign-in/form-sign-in.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { AlertComponent } from 'app/shared/components/alert/alert.component';
 
 @NgModule({
-  declarations: [AuthHeaderComponent, FormSignInComponent, SignInComponent],
+  declarations: [AuthHeaderComponent, FormSignInComponent, SignInComponent, AlertComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    ReactiveFormsModule,
+    AuthRoutingModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-
 export class AuthModule {}

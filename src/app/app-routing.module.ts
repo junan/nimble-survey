@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { AppComponent } from './app.component';
+import { EnsureAuthenticatedUserGuardService } from '@service/guard/ensure-authenticated-user-guard.service';
 
 const routes: Routes = [
-  // TODO: redirecting to login url for now, later need to remove/refactor
-  { path: '', redirectTo: 'auth/sign-in', pathMatch: 'full' },
   // Lazy Loading auth modules, loading it only when the user navigates to the '/auth' route.
   // It will improve app loading performance as it will load module code on demand.
-  { path: 'auth', loadChildren: () => import(`./modules/auth/auth.module`).then(m => m.AuthModule) }
+  { path: 'auth', loadChildren: () => import(`./modules/auth/auth.module`).then(m => m.AuthModule) },
+  // TODO: Rendering the AppComponent for now, will refactor if after when work on survey module later
+  { path: '', component: AppComponent, canActivate: [EnsureAuthenticatedUserGuardService]  }
 ];
 
 @NgModule({
@@ -23,5 +25,4 @@ const routes: Routes = [
     })],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule {}

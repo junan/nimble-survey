@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { AuthenticationService } from './../authentication/authentication.service';
+import { AuthenticationService } from '@service/authentication/authentication.service';
 import { environment } from '@environment';
 
 describe('ApiService', () => {
+  const signInApiUrl = `${environment.apiBaseUrl}/api/v1/oauth/token`;
   let service: AuthenticationService;
   let httpMock: HttpTestingController;
 
@@ -50,11 +51,11 @@ describe('ApiService', () => {
         password: 'secret',
       };
 
-      service.signIn('api/v1/oauth/token', params).subscribe(data => {
+      service.signIn(params).subscribe(data => {
         expect(data).toEqual(deserializedResponse);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
+      const request = httpMock.expectOne(signInApiUrl);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);
@@ -78,11 +79,11 @@ describe('ApiService', () => {
         password: 'invalid_secret',
       };
 
-      service.signIn('api/v1/oauth/token', params).subscribe(data => {
+      service.signIn(params).subscribe(data => {
         expect(data).toBe(response);
       });
 
-      const request = httpMock.expectOne(`${environment.apiBaseUrl}/api/v1/oauth/token`);
+      const request = httpMock.expectOne(signInApiUrl);
       expect(request.request.method).toBe('POST');
 
       request.flush(response);
