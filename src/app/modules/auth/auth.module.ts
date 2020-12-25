@@ -17,5 +17,4 @@ import { AlertComponent } from 'app/shared/components/alert/alert.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-
 export class AuthModule {}

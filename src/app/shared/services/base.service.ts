@@ -8,7 +8,6 @@ import { environment } from '@environment';
 import { errorMessages } from '../error-messages';
 
 @Injectable()
-
 export abstract class BaseService {
   readonly headers: object = {
     'Content-Type': 'application/json',
