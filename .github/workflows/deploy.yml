@@ -1,6 +1,15 @@
 name: Deploy to Heroku
 
-on: push
+on:
+  workflow_run:
+    workflows:
+      - Test
+    branches:
+      - main
+      - develop
+    types:
+      - completed
+  workflow_dispatch:
 
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -23,7 +32,7 @@ jobs:
           git remote add production https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PRODUCTION_APP.git
           git push -f production origin/main:refs/heads/master
       - name: Deploy Staging
-        if: github.ref == 'refs/heads/bug/fix-deployment'
+        if: github.ref == 'refs/heads/develop'
         run: |
           git remote add staging https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING_APP.git
           git push -f staging origin/develop:refs/heads/master
