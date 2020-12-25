@@ -23,10 +23,5 @@
 
   @include media-breakpoint-up(md) {
     padding: 0;
-    width: rem(400px);
-  }
-
-  @include media-breakpoint-up(lg) {
-    width: rem(500px);
   }
 }
