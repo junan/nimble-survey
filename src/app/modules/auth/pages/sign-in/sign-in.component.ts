@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
-  headerSubTitle = 'Sign in to Nimble';
+  HEADER_SUB_TITLE = 'Sign in to Nimble';
+
   constructor() {}
 
   ngOnInit(): void {}
