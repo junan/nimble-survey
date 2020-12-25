@@ -5,7 +5,6 @@ import { SessionService } from '@service/session/session.service';
 @Injectable({
   providedIn: 'root'
 })
-
 export class EnsureAuthenticatedUserGuardService implements CanActivate {
   constructor(
     private _sessionService: SessionService,

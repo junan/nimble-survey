@@ -6,7 +6,6 @@ import { environment } from '@environment';
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthenticationService extends BaseService {
   signIn(params: any): Observable<any> {
     const endpoint = 'v1/oauth/token';

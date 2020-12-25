@@ -4,7 +4,6 @@ import { constants } from '@constants';
 @Injectable({
   providedIn: 'root'
 })
-
 export class SessionService {
   constructor() { }
 
