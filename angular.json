@@ -105,7 +105,8 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/stylesheets"
+                "src/stylesheets",
+                "src/app/modules"
               ]
             }
           }
