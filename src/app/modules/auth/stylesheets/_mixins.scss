@@ -13,7 +13,7 @@
   background-size: cover;
 }
 
-.common-layout {
+@mixin authtication-form-layout {
   display: flex;
   width: rem(320px);
   flex-direction: column;
