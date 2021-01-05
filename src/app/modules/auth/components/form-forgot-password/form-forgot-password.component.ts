@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ForgotPasswordService } from '@service/forgot-password/forgot-password.service';
-import { constants } from '@shared/constants';
 import { successMessages } from '@shared/success-messages';
 import { errorMessages } from '@shared/error-messages';
+import { constants } from '@shared/constants';
 
 @Component({
   selector: 'app-form-forgot-password',

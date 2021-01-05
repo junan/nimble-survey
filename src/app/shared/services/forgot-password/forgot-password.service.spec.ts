@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ForgotPasswordService } from './forgot-password.service';
 
 describe('ForgotPasswordService', () => {
@@ -10,7 +9,7 @@ describe('ForgotPasswordService', () => {
     service = TestBed.inject(ForgotPasswordService);
   });
 
-  it('should be created', () => {
+  it('creates the ForgotPasswordService', () => {
     expect(service).toBeTruthy();
   });
 });
