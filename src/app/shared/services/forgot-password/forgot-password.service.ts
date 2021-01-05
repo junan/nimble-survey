@@ -11,7 +11,7 @@ export class ForgotPasswordService extends BaseService {
     const endpoint = 'v1/passwords';
     const data = {
       user: {
-        email: email,
+        email,
       },
       client_id: environment.apiClientId,
       client_secret: environment.apiClientSecret,
