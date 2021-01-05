@@ -7,7 +7,7 @@ import { environment } from '@environment';
   providedIn: 'root',
 })
 export class ForgotPasswordService extends BaseService {
-  forgotPawword(email: string): Observable<any> {
+  forgotPassword(email: string): Observable<any> {
     const endpoint = 'v1/passwords';
     const data = {
       user: {
