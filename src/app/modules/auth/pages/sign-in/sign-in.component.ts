@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { generalMessages } from '@shared/general-messages';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
-  HEADER_SUB_TITLE = 'Sign in to Nimble';
+  headerSubTitle = generalMessages.SIGN_IN_INSTRUCTION;
 
   constructor() {}
 
