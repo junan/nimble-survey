@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ForgotPasswordService } from '@service/forgot-password/forgot-password.service';
+
 @Component({
   selector: 'app-form-forgot-password',
   templateUrl: './form-forgot-password.component.html',
@@ -21,8 +22,6 @@ export class FormForgotPasswordComponent implements OnInit {
   }
 
   onSubmit(data: any): void {
-    this.alertMessage = '';
-
     this._forgotPasswordService.forgotPassword(data.email).subscribe(
       (_response) => {
         this.alertMessage =
@@ -30,6 +29,8 @@ export class FormForgotPasswordComponent implements OnInit {
       },
       (error) => {
         this.alertMessage = error;
+        this.alertIcon = 'error';
+        this.alertTitle = 'Error';
       }
     );
   }
