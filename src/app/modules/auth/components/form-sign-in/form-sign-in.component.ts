@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '@service/authentication/authentication.service';
 import { SessionService } from '@service/session/session.service';
 import { Router } from '@angular/router';
+import { constants } from '@shared/constants';
+import { errorMessages } from '@shared/error-messages';
 
 @Component({
   selector: 'app-form-sign-in',
@@ -11,8 +13,8 @@ import { Router } from '@angular/router';
 })
 export class FormSignInComponent implements OnInit {
   signInForm: any;
-  alertIcon = 'error';
-  alertTitle = 'Error';
+  alertIcon = constants.ERROR_ICON;
+  alertTitle = errorMessages.ERROR_TITLE;
   alertMessage = '';
 
   constructor(

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ForgotPasswordService } from '@service/forgot-password/forgot-password.service';
+import { constants } from '@shared/constants';
+import { successMessages } from '@shared/success-messages';
+import { errorMessages } from '@shared/error-messages';
 
 @Component({
   selector: 'app-form-forgot-password',
@@ -9,8 +12,8 @@ import { ForgotPasswordService } from '@service/forgot-password/forgot-password.
 })
 export class FormForgotPasswordComponent implements OnInit {
   forgotPasswordForm: any;
-  alertIcon = 'notification';
-  alertTitle = 'Check your email';
+  alertIcon = constants.NOTIFICATION_ICON;
+  alertTitle = successMessages.FORGOT_PASSWORD_TITLE;
   alertMessage = '';
 
   constructor(private _forgotPasswordService: ForgotPasswordService) {}
@@ -24,13 +27,12 @@ export class FormForgotPasswordComponent implements OnInit {
   onSubmit(data: any): void {
     this._forgotPasswordService.forgotPassword(data.email).subscribe(
       (_response) => {
-        this.alertMessage =
-          'We’ve email you instructions to reset your password.';
+        this.alertMessage = successMessages.FORGOT_PASSWORD_MESSAGE;
       },
       (error) => {
         this.alertMessage = error;
-        this.alertIcon = 'error';
-        this.alertTitle = 'Error';
+        this.alertIcon = constants.ERROR_ICON;
+        this.alertTitle = errorMessages.ERROR_TITLE;
       }
     );
   }
