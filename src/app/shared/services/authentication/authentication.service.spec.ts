@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { AuthenticationService } from '@service/authentication/authentication.service';
 import { environment } from '@environment';
 
@@ -11,7 +14,7 @@ describe('ApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AuthenticationService]
+      providers: [AuthenticationService],
     });
     service = TestBed.inject(AuthenticationService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -32,9 +35,9 @@ describe('ApiService', () => {
             token_type: 'Bearer',
             expires_in: 7200,
             refresh_token: 'refresh_token',
-            created_at: 1606198702
-          }
-        }
+            created_at: 1606198702,
+          },
+        },
       };
 
       const deserializedResponse = {
@@ -43,7 +46,7 @@ describe('ApiService', () => {
         tokenType: 'Bearer',
         expiresIn: 7200,
         refreshToken: 'refresh_token',
-        createdAt: 1606198702
+        createdAt: 1606198702,
       };
 
       const params = {
@@ -51,7 +54,7 @@ describe('ApiService', () => {
         password: 'secret',
       };
 
-      service.signIn(params).subscribe(data => {
+      service.signIn(params).subscribe((data) => {
         expect(data).toEqual(deserializedResponse);
       });
 
@@ -68,10 +71,11 @@ describe('ApiService', () => {
         errors: [
           {
             source: 'Doorkeeper::OAuth::Error',
-            detail: 'The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.',
-            code: 'invalid_grant'
-          }
-        ]
+            detail:
+              'The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.',
+            code: 'invalid_grant',
+          },
+        ],
       };
 
       const params = {
@@ -79,7 +83,7 @@ describe('ApiService', () => {
         password: 'invalid_secret',
       };
 
-      service.signIn(params).subscribe(data => {
+      service.signIn(params).subscribe((data) => {
         expect(data).toBe(response);
       });
 
