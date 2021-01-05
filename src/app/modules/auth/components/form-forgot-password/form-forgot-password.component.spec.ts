@@ -66,7 +66,7 @@ describe('FormForgotPasswordComponent', () => {
         spyOn(forgotPasswordService, 'forgotPassword').and.returnValue(
           throwError(expectedAlertMessage)
         );
-        
+
         component.onSubmit(data);
         expect(component.alertMessage).toBe(expectedAlertMessage);
       });
