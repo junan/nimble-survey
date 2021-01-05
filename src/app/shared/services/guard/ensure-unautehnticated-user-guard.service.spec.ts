@@ -7,12 +7,12 @@ describe('EnsureUnauthenticatedUserGuardService', () => {
   let guardService: EnsureUnauthenticatedUserGuardService;
   let sessionService: SessionService;
 
-  const routeMock: any = { snapshot: {}};
-  const routeStateMock: any = { snapshot: {}, url: '/auth/sign-in'};
+  const routeMock: any = { snapshot: {} };
+  const routeStateMock: any = { snapshot: {}, url: '/auth/sign-in' };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule],
     });
     guardService = TestBed.inject(EnsureUnauthenticatedUserGuardService);
     sessionService = TestBed.inject(SessionService);
@@ -27,7 +27,9 @@ describe('EnsureUnauthenticatedUserGuardService', () => {
       it('returns false', () => {
         spyOn(sessionService, 'isSignedIn').and.returnValue(true);
 
-        expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(false);
+        expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(
+          false
+        );
       });
     });
 
@@ -35,7 +37,9 @@ describe('EnsureUnauthenticatedUserGuardService', () => {
       it('returns true', () => {
         spyOn(sessionService, 'isSignedIn').and.returnValue(false);
 
-        expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(true);
+        expect(guardService.canActivate(routeMock, routeStateMock)).toEqual(
+          true
+        );
       });
     });
   });
