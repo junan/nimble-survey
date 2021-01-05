@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { generalMessages } from '@shared/general-messages';
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
 })
 export class ForgotPasswordComponent implements OnInit {
-  HEADER_SUB_TITLE =
-    'Enter your email to receive instructions for resetting your password.';
+  headerSubTitle = generalMessages.FORGOT_PASSWORD_INSTRUCTION;
 
   constructor() {}
 
