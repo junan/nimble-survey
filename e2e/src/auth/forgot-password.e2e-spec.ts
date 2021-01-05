@@ -16,7 +16,7 @@ describe('ForgotPassword', () => {
       expect(await page.submitButton().getAttribute('disabled')).toBeFalsy();
     });
 
-    it('displays the error message', async () => {
+    it('displays the success message', async () => {
       await page.forgotPassword('john@example.com');
 
       browser

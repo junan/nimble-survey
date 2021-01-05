@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { ForgotPasswordService } from './forgot-password.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { environment } from '@environment';
 
 describe('ForgotPasswordService', () => {
@@ -21,7 +24,7 @@ describe('ForgotPasswordService', () => {
     httpMock.verify();
   });
 
-  it('returns the success respose', () => {
+  it('returns the success response', () => {
     const response = {
       meta: {
         message: 'We’ve email you instructions to reset your password.',
