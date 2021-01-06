@@ -13,7 +13,7 @@
     "heroku-postbuild": "ng build --prod",
     "stylelint": "stylelint '**/*.scss'",
     "generate:sprite": "svg-icon-generate --folder=src/assets/images/icons --output=src/assets/images/icon-sprite.svg",
-    "int:extract": "ng xi18n --output-path src/locale"
+    "int:extract": "ng extract-i18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
