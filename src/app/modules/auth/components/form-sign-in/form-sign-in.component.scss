@@ -11,7 +11,7 @@
     cursor: pointer;
   }
 
-  &__input:last-of-type {
+  .form-group:last-of-type &__input {
     display: inline;
     padding-right: rem(95px);
   }
