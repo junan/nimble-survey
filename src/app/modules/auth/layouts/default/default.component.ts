@@ -8,7 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class DefaultComponent implements OnInit {
   showBackButton = false;
-  headerSubTitle = '';
+  headerTitle = '';
 
   constructor(private _router: Router){
     this.subscribeRouterEvents();
@@ -20,10 +20,10 @@ export class DefaultComponent implements OnInit {
   subscribeRouterEvents = () => {
     this._router.events.subscribe(event => {
         if (event instanceof NavigationEnd && this._router.url === '/auth/forgot-password') {
-          this.headerSubTitle = 'Enter your email to receive instructions for resetting your password.';
+          this.headerTitle = 'Enter your email to receive instructions for resetting your password.';
           this.showBackButton = true;
         } else {
-          this.headerSubTitle = 'Sign in to Nimble';
+          this.headerTitle = 'Sign in to Nimble';
           this.showBackButton = false;
         }
       }

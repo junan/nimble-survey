@@ -20,7 +20,7 @@ describe('AuthHeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthHeaderComponent);
     component = fixture.componentInstance;
-    component.subTitle = 'Sign in to Nimble';
+    component.title = 'Sign in to Nimble';
     baseElement = fixture.nativeElement;
     fixture.detectChanges();
   });

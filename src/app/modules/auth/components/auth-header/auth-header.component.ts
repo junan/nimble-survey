@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./auth-header.component.scss'],
 })
 export class AuthHeaderComponent implements OnInit {
-  @Input() subTitle = '';
+  @Input() title = '';
 
   constructor() {}
 
