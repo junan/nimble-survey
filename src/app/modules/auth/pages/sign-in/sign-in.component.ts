@@ -6,7 +6,7 @@ import { generalMessages } from '@shared/general-messages';
   templateUrl: './sign-in.component.html',
 })
 export class SignInComponent implements OnInit {
-  headerSubTitle = generalMessages.SIGN_IN_INSTRUCTION;
+  headerTitle = generalMessages.SIGN_IN_INSTRUCTION;
 
   constructor() {}
 

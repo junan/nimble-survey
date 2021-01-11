@@ -6,7 +6,7 @@ import { generalMessages } from '@shared/general-messages';
   templateUrl: './forgot-password.component.html',
 })
 export class ForgotPasswordComponent implements OnInit {
-  headerSubTitle = generalMessages.FORGOT_PASSWORD_INSTRUCTION;
+  headerTitle = generalMessages.FORGOT_PASSWORD_INSTRUCTION;
 
   constructor() {}
 
