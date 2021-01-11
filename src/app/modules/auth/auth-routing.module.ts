@@ -10,16 +10,15 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
+    canActivate: [EnsureUnauthenticatedUserGuardService],
     children: [
       {
         path: 'sign-in',
-        component: SignInComponent,
-        canActivate: [EnsureUnauthenticatedUserGuardService]
+        component: SignInComponent
       },
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent,
-        canActivate: [EnsureUnauthenticatedUserGuardService],
+        component: ForgotPasswordComponent
       },
     ]
   }

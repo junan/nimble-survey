@@ -8,7 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class DefaultComponent implements OnInit {
   showBackButton = false;
-  headerSubTitle = 'Sign in to Nimble';
+  headerSubTitle = '';
 
   constructor(private _router: Router){
     this.subscribeRouterEvents();

@@ -30,11 +30,7 @@ describe('AuthHeaderComponent', () => {
   });
 
   it('renders header', () => {
-    expect(baseElement.querySelector(SELECTORS.headerLogo).src).toContain(
-      'assets/images/logo.svg'
-    );
-    expect(
-      baseElement.querySelector(SELECTORS.headerTitle).textContent
-    ).toContain('Sign in to Nimble');
+    expect(baseElement.querySelector(SELECTORS.headerLogo).src).toContain('assets/images/logo.svg');
+    expect(baseElement.querySelector(SELECTORS.headerTitle).textContent).toContain('Sign in to Nimble');
   });
 });
