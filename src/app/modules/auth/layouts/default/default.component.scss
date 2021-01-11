@@ -1,3 +1,4 @@
+@import "variables";
 @import "functions/sizing";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -15,7 +16,7 @@
   background-size: cover;
 }
 
-@mixin authtication-form-layout {
+.layout-default {
   display: flex;
   width: rem(320px);
   flex-direction: column;
@@ -25,5 +26,25 @@
 
   @include media-breakpoint-up(md) {
     padding: 0;
+  }
+
+  .app-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: rem(10px);
+
+    @include media-breakpoint-up(md) {
+      margin-top: rem(37px);
+      margin-left: rem(39px);
+    }
+
+    &__link {
+      color: $white;
+
+      &:hover {
+        color: map-get($brand-gray, 400);
+      }
+    }
   }
 }

@@ -1,8 +1,0 @@
-@import "variables";
-@import "functions/sizing";
-@import "auth/stylesheets/mixins";
-
-.sign-in-content,
-.sign-in-header {
-  @include authtication-form-layout;
-}

@@ -9,9 +9,11 @@ import { FormForgotPasswordComponent } from './components/form-forgot-password/f
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AlertComponent } from 'app/shared/components/alert/alert.component';
+import { DefaultComponent } from './layouts/default/default.component';
 
 @NgModule({
   declarations: [
+    DefaultComponent,
     AuthHeaderComponent,
     FormSignInComponent,
     FormForgotPasswordComponent,
