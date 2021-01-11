@@ -8,7 +8,7 @@ describe('AuthHeaderComponent', () => {
 
   const SELECTORS = {
     headerLogo: '.auth-header__logo',
-    headerTitle: '.auth-header__subtitle',
+    headerTitle: '.auth-header__title',
   };
 
   beforeEach(async () => {
