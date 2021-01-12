@@ -23,7 +23,7 @@
     "paths": {
       "@environment": ["environments/environment"],
       "@service/*": ["app/shared/services/*"],
-      "@constants": ["app/shared/constants"]
+      "@shared/*": ["app/shared/*"]
     }
   },
   "angularCompilerOptions": {

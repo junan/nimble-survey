@@ -6,13 +6,13 @@ import { environment } from '@environment';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService extends BaseService {
-  signIn(params: any): Observable<any> {
-    const endpoint = 'v1/oauth/token';
+export class ForgotPasswordService extends BaseService {
+  forgotPassword(email: string): Observable<any> {
+    const endpoint = 'v1/passwords';
     const data = {
-      grant_type: 'password',
-      email: params.email,
-      password: params.password,
+      user: {
+        email,
+      },
       client_id: environment.apiClientId,
       client_secret: environment.apiClientSecret,
     };
