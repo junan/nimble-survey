@@ -15,8 +15,8 @@ const routes: Routes = [
   // TODO: Rendering the AppComponent for now, will refactor if after when work on survey module later
   {
     path: '',
-    component: LoadingSkeletonComponent,
-    canActivate: [EnsureAuthenticatedUserGuardService],
+    loadChildren: () =>
+      import(`./modules/survey/survey.module`).then((m) => m.SurveyModule),
   },
   { path: '**', redirectTo: '' },
 ];
