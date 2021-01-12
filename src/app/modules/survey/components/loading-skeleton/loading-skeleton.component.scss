@@ -2,12 +2,14 @@
 @import "functions/sizing";
 
 :host ::ng-deep ngx-skeleton-loader .progress {
-  background-image: linear-gradient(
-    90deg,
-    #313236,
-    #49494d,
-    #313236
-  ) !important;
+  &:before {
+    background-image: linear-gradient(
+      90deg,
+      #313236,
+      #49494d,
+      #313236
+    ) !important;
+  }
 }
 
 .loading-skeleton {
