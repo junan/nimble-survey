@@ -36,4 +36,13 @@
   &__image {
     height: rem(302px);
   }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__action {
+    align-self: flex-end;
+  }
 }
