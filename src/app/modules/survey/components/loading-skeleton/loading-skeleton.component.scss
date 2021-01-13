@@ -1,0 +1,163 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "variables";
+@import "functions/sizing";
+
+.loading-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: rem(15px);
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    margin: rem(32px 32px 0 32px);
+  }
+
+  &__navigation,
+  &__content {
+    width: rem(300px);
+
+    @include media-breakpoint-up(md) {
+      width: auto;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: rem(20px);
+
+    @include media-breakpoint-up(md) {
+      margin-top: rem(40px);
+    }
+  }
+
+  &__header,
+  &__body,
+  &__footer {
+    width: rem(300px);
+
+    @include media-breakpoint-up(md) {
+      width: rem(400px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: rem(704px);
+    }
+  }
+
+  &__header {
+    margin-bottom: rem(30px);
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(64px);
+    }
+  }
+
+  &__body {
+    margin-bottom: rem(20px);
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(38px);
+    }
+  }
+
+  &__date {
+    margin-bottom: rem(5px);
+  }
+
+  &__image {
+    height: rem(302px);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__action {
+    align-self: flex-end;
+  }
+}
+
+// This is for overriding default style of `ngx-skeleton-loader`
+:host ::ng-deep {
+  ngx-skeleton-loader .loader {
+    background-color: $skeleton-loader-background-color;
+    border-radius: rem(10px);
+    height: rem(18px);
+  }
+
+  ngx-skeleton-loader .progress {
+    margin: 0;
+
+    &::before {
+      background-image: $skeleton-loader-linear-gradient !important;
+    }
+  }
+
+  .loading-skeleton {
+    &__logo ngx-skeleton-loader .loader {
+      width: rem(117px);
+    }
+
+    &__user-profile ngx-skeleton-loader .loader {
+      width: rem(36px);
+      height: rem(36px);
+      margin: 0;
+    }
+
+    &__date ngx-skeleton-loader .loader {
+      width: rem(117px);
+    }
+
+    &__day ngx-skeleton-loader .loader {
+      width: rem(90px);
+    }
+
+    &__image ngx-skeleton-loader .loader {
+      height: rem(302px);
+    }
+
+    &__footer-title ngx-skeleton-loader .loader {
+      width: rem(200px);
+
+      @include media-breakpoint-up(md) {
+        width: rem(302px);
+      }
+    }
+
+    &__footer-description ngx-skeleton-loader .loader {
+      width: rem(160px);
+
+      @include media-breakpoint-up(md) {
+        width: rem(210px);
+      }
+    }
+
+    &__next-button ngx-skeleton-loader .loader {
+      width: rem(36px);
+      height: rem(36px);
+
+      @include media-breakpoint-up(md) {
+        width: rem(56px);
+        height: rem(56px);
+      }
+    }
+  }
+}

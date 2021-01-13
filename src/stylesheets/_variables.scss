@@ -52,6 +52,9 @@ $gray: map-get($brand-gray, 500);
 $primary: $white;
 $secondary: $gray;
 
+$skeleton-loader-background-color: #313136;
+$skeleton-loader-linear-gradient: linear-gradient(90deg, #313236, #49494d, #313236);
+
 // Fonts
 $font-family-base: 'Neuzeit S LT Std', serif;
 
