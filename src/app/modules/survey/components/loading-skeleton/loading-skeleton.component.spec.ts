@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoadingSkeletonComponent } from './loading-skeleton.component';
 
 describe('LoadingSkeletonComponent', () => {
@@ -8,9 +7,8 @@ describe('LoadingSkeletonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadingSkeletonComponent ]
-    })
-    .compileComponents();
+      declarations: [LoadingSkeletonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
