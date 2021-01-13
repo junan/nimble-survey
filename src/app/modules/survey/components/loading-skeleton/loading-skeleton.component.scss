@@ -16,7 +16,8 @@
     margin: rem(32px 32px 0 32px);
   }
 
-  &__navigation,  &__content {
+  &__navigation,
+  &__content {
     width: rem(300px);
 
     @include media-breakpoint-up(md) {
@@ -102,11 +103,11 @@
   }
 
   ngx-skeleton-loader .progress {
+    margin: 0;
+
     &::before {
       background-image: linear-gradient(90deg, #313236, #49494d, #313236) !important;
     }
-
-    margin: 0;
   }
 
   .loading-skeleton {
