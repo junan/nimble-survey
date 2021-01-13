@@ -95,9 +95,10 @@
   }
 }
 
+// This is for overriding default style of `ngx-skeleton-loader`
 :host ::ng-deep {
   ngx-skeleton-loader .loader {
-    background-color: #313136;
+    background-color: $skeleton-loader-background-color;
     border-radius: rem(10px);
     height: rem(18px);
   }
@@ -106,7 +107,7 @@
     margin: 0;
 
     &::before {
-      background-image: linear-gradient(90deg, #313236, #49494d, #313236) !important;
+      background-image: $skeleton-loader-linear-gradient !important;
     }
   }
 
