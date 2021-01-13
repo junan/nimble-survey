@@ -1,8 +1,26 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
 @import "variables";
 @import "functions/sizing";
 
 .loading-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: rem(32px 32px 0 32px);
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  &__navigation,  &__content {
+    width: rem(300px);
+    @include media-breakpoint-up(md) {
+      width: auto;
+    }
+  }
+
 
   &__navigation {
     display: flex;
@@ -19,7 +37,15 @@
   &__header,
   &__body,
   &__footer {
-    width: rem(704px);
+    width: rem(300px);
+
+    @include media-breakpoint-up(md) {
+      width: rem(400px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: rem(704px);
+    }
   }
 
   &__header {
@@ -36,8 +62,13 @@
 
   &__footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: rem(38px);
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
   }
 
   &__action {
