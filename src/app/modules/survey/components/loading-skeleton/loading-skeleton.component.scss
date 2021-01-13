@@ -1,6 +1,11 @@
 @import "variables";
 @import "functions/sizing";
 
+:host ::ng-deep ngx-skeleton-loader .loader {
+  background-color: #313136;
+  border-radius: rem(10px);
+}
+
 :host ::ng-deep ngx-skeleton-loader .progress {
   &:before {
     background-image: linear-gradient(
@@ -10,15 +15,31 @@
       #313236
     ) !important;
   }
+  margin: 0;
+}
+
+:host ::ng-deep .loading-skeleton__user-profile ngx-skeleton-loader .loader {
+  width: rem(36px);
+  height: rem(36px);
+}
+
+:host ::ng-deep .loading-skeleton__user-profile ngx-skeleton-loader .logo {
+  width: rem(36px);
+  height: rem(36px);
 }
 
 .loading-skeleton {
-  margin-left: rem(30px);
-  margin-right: rem(32px);
+  margin: rem(32px 32px 0 32px);
 
   &__navigation {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__logo {
+    // width: rem(117px);
+    // height: rem(18px);
+    // margin-top: rem(10px);
   }
 
   &__content {
