@@ -1,25 +1,25 @@
 @import "variables";
 @import "functions/sizing";
 
-:host ::ng-deep ngx-skeleton-loader .loader {
-  background-color: #313136;
-  border-radius: rem(10px);
-  height: rem(18px);
-}
-
-:host ::ng-deep ngx-skeleton-loader .progress {
-  &:before {
-    background-image: linear-gradient(
-      90deg,
-      #313236,
-      #49494d,
-      #313236
-    ) !important;
-  }
-  margin: 0;
-}
-
 :host ::ng-deep {
+  ngx-skeleton-loader .loader {
+    background-color: #313136;
+    border-radius: rem(10px);
+    height: rem(18px);
+  }
+
+  ngx-skeleton-loader .progress {
+    &:before {
+      background-image: linear-gradient(
+        90deg,
+        #313236,
+        #49494d,
+        #313236
+      ) !important;
+    }
+    margin: 0;
+  }
+
   .loading-skeleton__logo ngx-skeleton-loader .loader {
     width: rem(117px);
   }
@@ -61,12 +61,6 @@
   &__navigation {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__logo {
-    // width: rem(117px);
-    // height: rem(18px);
-    // margin-top: rem(10px);
   }
 
   &__content {
