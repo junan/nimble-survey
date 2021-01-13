@@ -4,6 +4,7 @@
 :host ::ng-deep ngx-skeleton-loader .loader {
   background-color: #313136;
   border-radius: rem(10px);
+  height: rem(18px);
 }
 
 :host ::ng-deep ngx-skeleton-loader .progress {
@@ -18,14 +19,40 @@
   margin: 0;
 }
 
-:host ::ng-deep .loading-skeleton__user-profile ngx-skeleton-loader .loader {
-  width: rem(36px);
-  height: rem(36px);
-}
+:host ::ng-deep {
+  .loading-skeleton__logo ngx-skeleton-loader .loader {
+    width: rem(117px);
+  }
 
-:host ::ng-deep .loading-skeleton__user-profile ngx-skeleton-loader .logo {
-  width: rem(36px);
-  height: rem(36px);
+  .loading-skeleton__user-profile ngx-skeleton-loader .loader {
+    width: rem(36px);
+    height: rem(36px);
+  }
+
+  .loading-skeleton__date ngx-skeleton-loader .loader {
+    width: rem(117px);
+  }
+
+  .loading-skeleton__day ngx-skeleton-loader .loader {
+    width: rem(90px);
+  }
+
+  .loading-skeleton__image ngx-skeleton-loader .loader {
+    height: rem(302px);
+  }
+
+  .loading-skeleton__footer-title ngx-skeleton-loader .loader {
+    width: rem(302px);
+  }
+
+  .loading-skeleton__footer-description ngx-skeleton-loader .loader {
+    width: rem(210px);
+  }
+
+  .loading-skeleton__next-button ngx-skeleton-loader .loader {
+    width: rem(56px);
+    height: rem(56px);
+  }
 }
 
 .loading-skeleton {
@@ -46,12 +73,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: rem(40px);
   }
 
   &__header,
   &__body,
   &__footer {
     width: rem(704px);
+  }
+
+  &__header {
+    margin-bottom: rem(64px);
+  }
+
+  &__date {
+    margin-bottom: rem(5px);
   }
 
   &__image {
@@ -61,6 +97,7 @@
   &__footer {
     display: flex;
     justify-content: space-between;
+    margin-top: rem(38px);
   }
 
   &__action {
