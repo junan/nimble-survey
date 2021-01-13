@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { LoadingSkeletonComponent } from './loading-skeleton.component';
-import { HttpClientModule } from "@angular/common/http";
 
 describe('LoadingSkeletonComponent', () => {
   let component: LoadingSkeletonComponent;
@@ -16,7 +16,7 @@ describe('LoadingSkeletonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoadingSkeletonComponent],
-      imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
+      imports: [HttpClientModule],
     }).compileComponents();
   });
 
