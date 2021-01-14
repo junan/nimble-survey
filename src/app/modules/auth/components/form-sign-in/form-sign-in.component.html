@@ -1,17 +1,46 @@
-<div *ngIf="errorMessage !== ''">
-  <app-alert [errorMessage]="errorMessage"></app-alert>
+<div *ngIf="alertMessage !== ''">
+  <app-alert
+    [icon]="alertIcon"
+    [title]="alertTitle"
+    [message]="alertMessage"
+  ></app-alert>
 </div>
 
-<form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)" class="form-sign-in">
+<form
+  [formGroup]="signInForm"
+  (ngSubmit)="onSubmit(signInForm.value)"
+  class="form-sign-in"
+>
   <div class="form-group">
     <label for="email" class="form-sign-in__label">Email</label>
-    <input formControlName="email" name="email" id="email" type="email" class="form-control" required
+    <input
+      formControlName="email"
+      name="email"
+      id="email"
+      type="email"
+      class="form-control form-sign-in__input"
+      required
     />
   </div>
   <div class="form-group">
     <label for="password" class="form-sign-in__label">Password</label>
-    <input formControlName="password" name="password" type="password" id="password" class="form-control" required
+    <input
+      formControlName="password"
+      name="password"
+      type="password"
+      id="password"
+      class="form-control form-sign-in__input"
+      required
     />
+    <a routerLink="/auth/forgot-password" class="form-sign-in__forgot-password"
+      >Forgot?</a
+    >
   </div>
-  <button [disabled]="!signInForm.valid" class="btn btn-primary btn-block" type="submit">Sign in</button>
+  <button
+    [disabled]="!signInForm.valid"
+    class="btn btn-primary btn-block"
+    type="submit"
+  >
+    Sign in
+  </button>
 </form>

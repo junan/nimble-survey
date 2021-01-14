@@ -23,12 +23,8 @@ describe('FormSignInComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FormSignInComponent],
-      imports: [
-        HttpClientModule,
-        RouterTestingModule.withRoutes([])
-      ]
-    })
-      .compileComponents();
+      imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -60,7 +56,7 @@ describe('FormSignInComponent', () => {
           tokenType: 'Bearer',
           expiresIn: 7200,
           refreshToken: 'refresh_token',
-          createdAt: 1606198702
+          createdAt: 1606198702,
         };
 
         spyOn(authenticationService, 'signIn').and.returnValue(of([response]));
@@ -72,13 +68,15 @@ describe('FormSignInComponent', () => {
     });
 
     describe('Given invalid credentials', () => {
-      it('sets error message to errorMessage variable', () => {
+      it('sets error message to alertMessage variable', () => {
         const data = { email: 'john@example.com', password: 'invalid-pass' };
-        const expectedErrorMessage = 'Email or Password is invalid. Please try again.';
-        spyOn(authenticationService, 'signIn').and.returnValue(throwError(expectedErrorMessage));
+        const expectedAlertMessage = 'Email or Password is invalid. Please try again.';
+        spyOn(authenticationService, 'signIn').and.returnValue(
+          throwError(expectedAlertMessage)
+        );
 
         component.onSubmit(data);
-        expect(component.errorMessage).toBe(expectedErrorMessage);
+        expect(component.alertMessage).toBe(expectedAlertMessage);
       });
     });
   });

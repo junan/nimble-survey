@@ -10,4 +10,16 @@
 
     cursor: pointer;
   }
+
+  .form-group:last-of-type &__input {
+    display: inline;
+    padding-right: rem(95px);
+  }
+
+  &__forgot-password {
+    color: map-get($brand-gray, 600);
+    margin-left: rem(-70px);
+    font-size: map-get($font-sizes, 'sm');
+    line-height: rem(20px);
+  }
 }

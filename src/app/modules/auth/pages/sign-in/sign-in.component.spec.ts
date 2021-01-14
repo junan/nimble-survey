@@ -6,10 +6,6 @@ describe('SignInComponent', () => {
   let fixture: ComponentFixture<SignInComponent>;
   let baseElement: any;
 
-  const SELECTORS = {
-    signInContent: '.sign-in-content'
-  };
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [SignInComponent]
@@ -26,9 +22,5 @@ describe('SignInComponent', () => {
 
   it('creates the component', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('renders header', () => {
-    expect(baseElement.querySelector(SELECTORS.signInContent)).toBeTruthy();
   });
 });

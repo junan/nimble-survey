@@ -8,19 +8,19 @@ describe('AuthHeaderComponent', () => {
 
   const SELECTORS = {
     headerLogo: '.auth-header__logo',
-    headerTitle: '.auth-header__subtitle'
+    headerTitle: '.auth-header__title',
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthHeaderComponent]
-    })
-      .compileComponents();
+      declarations: [AuthHeaderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthHeaderComponent);
     component = fixture.componentInstance;
+    component.title = 'Sign in to Nimble';
     baseElement = fixture.nativeElement;
     fixture.detectChanges();
   });

@@ -1,0 +1,15 @@
+<div class="layout-default">
+  <div *ngIf="showBackButton" class="app-nav">
+    <a routerLink="/auth/sign-in" class="app-nav__link">
+      <svg-icon src="assets/images/icon-sprite.svg#arrow-left" class="icon"></svg-icon>
+    </a>
+  </div>
+
+  <div class="app-header">
+    <app-auth-header [title]="headerTitle"></app-auth-header>
+  </div>
+
+  <div class="app-main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
