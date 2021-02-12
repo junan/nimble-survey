@@ -12,7 +12,9 @@
   class="form-sign-in"
 >
   <div class="form-group">
-    <label for="email" class="form-sign-in__label">Email</label>
+    <label for="email" class="form-sign-in__label" i18n="@@signInEmail"
+      >Email</label
+    >
     <input
       formControlName="email"
       name="email"
@@ -23,7 +25,9 @@
     />
   </div>
   <div class="form-group">
-    <label for="password" class="form-sign-in__label">Password</label>
+    <label for="password" class="form-sign-in__label" i18n="@@signInPassword"
+      >Password</label
+    >
     <input
       formControlName="password"
       name="password"
@@ -32,7 +36,10 @@
       class="form-control form-sign-in__input"
       required
     />
-    <a routerLink="/auth/forgot-password" class="form-sign-in__forgot-password"
+    <a
+      routerLink="/auth/forgot-password"
+      class="form-sign-in__forgot-password"
+      i18n="@@forgotPassword"
       >Forgot?</a
     >
   </div>
@@ -40,6 +47,7 @@
     [disabled]="!signInForm.valid"
     class="btn btn-primary btn-block"
     type="submit"
+    i18n="@@signInButton"
   >
     Sign in
   </button>
